@@ -23,6 +23,7 @@ const LayoutContent = () => {
   const { withLngBase } = useI18n()
   const { pathname } = useLocation()
   const [scrolled, setScrolled] = useState(false)
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -46,7 +47,7 @@ const LayoutContent = () => {
       <header
         className={[
           'fixed inset-x-0 top-0 z-30 flex items-center justify-between gap-lg px-lg py-xs transition-all duration-300',
-          scrolled ? 'bg-alpfor-blue/85 backdrop-blur-md' : 'bg-transparent',
+          scrolled || mobileNavOpen ? 'bg-alpfor-blue/85 backdrop-blur-md' : 'bg-transparent',
         ].join(' ')}
       >
         <Link to={withLngBase('/')} className="shrink-0">
@@ -57,7 +58,7 @@ const LayoutContent = () => {
             style={{ filter: 'brightness(0) invert(1) drop-shadow(0 0px 2px rgba(0,0,0,0.85))' }}
           />
         </Link>
-        <Nav />
+        <Nav onMobileOpenChange={setMobileNavOpen} />
         <div className="hidden lg:flex">
           <LanguageSwitch />
         </div>

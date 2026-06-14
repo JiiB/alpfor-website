@@ -1,8 +1,9 @@
-import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-import { useI18n } from '../i18n.tsx'
+import { useEffect, useState } from 'react'
+
 import { LanguageSwitch } from './LanguageSwitch.tsx'
+import { useI18n } from '../i18n.tsx'
+import { useTranslation } from 'react-i18next'
 
 type NavLeaf = { labelKey: string; to: string }
 type NavGroup = { labelKey: string; children: NavLeaf[] }
@@ -50,13 +51,23 @@ const Chevron = ({ open }: { open: boolean }) => (
   </svg>
 )
 
-export const Nav = () => {
+export const Nav = ({ onMobileOpenChange }: { onMobileOpenChange?: (open: boolean) => void }) => {
   const { t } = useTranslation()
   const { withLngBase } = useI18n()
   const { pathname } = useLocation()
   const [activeDesktop, setActiveDesktop] = useState<string | null>(null)
   const [activeMobile, setActiveMobile] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  const setMobile = (open: boolean) => {
+    setMobileOpen(open)
+    onMobileOpenChange?.(open)
+  }
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [mobileOpen])
 
   const isActive = (to: string) => pathname === withLngBase(to)
   const isGroupActive = (group: NavGroup) => group.children.some(c => isActive(c.to))
@@ -130,7 +141,7 @@ export const Nav = () => {
       {/* Mobile hamburger */}
       <button
         type="button"
-        onClick={() => setMobileOpen(v => !v)}
+        onClick={() => setMobile(!mobileOpen)}
         aria-label="Toggle menu"
         className="lg:hidden flex flex-col justify-center gap-[5px] w-8 h-8 cursor-pointer bg-transparent border-none p-1 shrink-0"
       >
@@ -141,7 +152,7 @@ export const Nav = () => {
 
       {/* Mobile dropdown panel */}
       {mobileOpen && (
-        <div className="lg:hidden absolute inset-x-0 top-full bg-alpfor-blue border-t border-white/10 shadow-lg">
+        <div className="lg:hidden absolute inset-x-0 top-full bg-alpfor-blue border-t border-white/10 shadow-lg overflow-y-auto" style={{ minHeight: 'calc(100dvh - 100%)' }}>
           <nav className="flex flex-col py-xs">
             {navItems.map(item => {
               if (!isGroup(item)) {
@@ -149,7 +160,7 @@ export const Nav = () => {
                   <Link
                     key={item.labelKey}
                     to={withLngBase(item.to)}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => setMobile(false)}
                     className={[
                       'font-sans text-base hover:bg-white/5 transition-colors px-lg py-sm',
                       isActive(item.to) ? 'text-white font-medium' : 'text-white/80 hover:text-white',
@@ -180,7 +191,7 @@ export const Nav = () => {
                         <Link
                           key={child.labelKey}
                           to={withLngBase(child.to)}
-                          onClick={() => setMobileOpen(false)}
+                          onClick={() => setMobile(false)}
                           className={[
                             'block font-sans text-base transition-colors pl-xl pr-lg py-xs',
                             isActive(child.to) ? 'text-white font-medium' : 'text-white/70 hover:text-white',
