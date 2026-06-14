@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useI18n } from '../i18n.tsx'
 import { LanguageSwitch } from './LanguageSwitch.tsx'
@@ -53,9 +53,13 @@ const Chevron = ({ open }: { open: boolean }) => (
 export const Nav = () => {
   const { t } = useTranslation()
   const { withLngBase } = useI18n()
+  const { pathname } = useLocation()
   const [activeDesktop, setActiveDesktop] = useState<string | null>(null)
   const [activeMobile, setActiveMobile] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  const isActive = (to: string) => pathname === withLngBase(to)
+  const isGroupActive = (group: NavGroup) => group.children.some(c => isActive(c.to))
 
   return (
     <>
@@ -67,7 +71,12 @@ export const Nav = () => {
               <Link
                 key={item.labelKey}
                 to={withLngBase(item.to)}
-                className="font-sans text-base text-white/80 hover:text-white transition-colors px-xs py-1 whitespace-nowrap"
+                className={[
+                  'font-sans text-base transition-colors px-xs py-1 whitespace-nowrap border-b-2',
+                  isActive(item.to)
+                    ? 'text-white border-white'
+                    : 'text-white/80 hover:text-white border-transparent',
+                ].join(' ')}
               >
                 {t(item.labelKey)}
               </Link>
@@ -84,19 +93,29 @@ export const Nav = () => {
             >
               <button
                 type="button"
-                className="flex items-center font-sans text-base text-white/80 hover:text-white transition-colors px-xs py-1 whitespace-nowrap cursor-pointer bg-transparent border-none"
+                className={[
+                  'flex items-center font-sans text-base transition-colors px-xs py-1 whitespace-nowrap cursor-pointer bg-transparent border-x-0 border-t-0 border-b-2',
+                  isGroupActive(item)
+                    ? 'text-white border-white'
+                    : 'text-white/80 hover:text-white border-transparent',
+                ].join(' ')}
               >
                 {t(item.labelKey)}
                 <Chevron open={open} />
               </button>
 
               {open && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 min-w-[160px] bg-alpfor-blue border border-white/10 rounded-md shadow-lg overflow-hidden">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 min-w-[160px] bg-white shadow-xl rounded-md overflow-hidden">
                   {item.children.map(child => (
                     <Link
                       key={child.labelKey}
                       to={withLngBase(child.to)}
-                      className="block font-sans text-base text-white/80 hover:text-white hover:bg-white/8 transition-colors px-sm py-xs whitespace-nowrap"
+                      className={[
+                        'block font-sans text-base transition-colors px-sm py-xs whitespace-nowrap',
+                        isActive(child.to)
+                          ? 'text-alpfor-blue font-semibold bg-alpfor-blue/5'
+                          : 'text-alpfor-forest hover:text-alpfor-blue hover:bg-alpfor-blue/5',
+                      ].join(' ')}
                     >
                       {t(child.labelKey)}
                     </Link>
@@ -131,7 +150,10 @@ export const Nav = () => {
                     key={item.labelKey}
                     to={withLngBase(item.to)}
                     onClick={() => setMobileOpen(false)}
-                    className="font-sans text-base text-white/80 hover:text-white hover:bg-white/5 transition-colors px-lg py-sm"
+                    className={[
+                      'font-sans text-base hover:bg-white/5 transition-colors px-lg py-sm',
+                      isActive(item.to) ? 'text-white font-medium' : 'text-white/80 hover:text-white',
+                    ].join(' ')}
                   >
                     {t(item.labelKey)}
                   </Link>
@@ -144,7 +166,10 @@ export const Nav = () => {
                   <button
                     type="button"
                     onClick={() => setActiveMobile(expanded ? null : item.labelKey)}
-                    className="w-full flex items-center justify-between font-sans text-base text-white/80 hover:text-white transition-colors px-lg py-sm cursor-pointer bg-transparent border-none text-left"
+                    className={[
+                      'w-full flex items-center justify-between font-sans text-base transition-colors px-lg py-sm cursor-pointer bg-transparent border-none text-left',
+                      isGroupActive(item) ? 'text-white font-medium' : 'text-white/80 hover:text-white',
+                    ].join(' ')}
                   >
                     {t(item.labelKey)}
                     <Chevron open={expanded} />
@@ -156,7 +181,10 @@ export const Nav = () => {
                           key={child.labelKey}
                           to={withLngBase(child.to)}
                           onClick={() => setMobileOpen(false)}
-                          className="block font-sans text-base text-white/70 hover:text-white transition-colors pl-xxl pr-lg py-xs"
+                          className={[
+                            'block font-sans text-base transition-colors pl-xl pr-lg py-xs',
+                            isActive(child.to) ? 'text-white font-medium' : 'text-white/70 hover:text-white',
+                          ].join(' ')}
                         >
                           {t(child.labelKey)}
                         </Link>
