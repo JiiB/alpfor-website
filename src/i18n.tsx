@@ -11,14 +11,17 @@ export const resources = {
     translation: {
       nav: {
         home: 'Home',
+        organisation: 'Organisation',
         verein: 'Association',
         infra: 'Infrastructure',
+        science: 'Science',
         research: 'Research',
         lehre: 'Teaching',
-        map: 'Map',
-        webcam: 'Webcam / Weather',
         geology: 'Geology',
         biodiversity: 'Flora & Fauna',
+        location: 'Location',
+        map: 'Map',
+        webcam: 'Webcam / Weather',
         contact: 'Contact',
       },
       sections: {
@@ -53,14 +56,17 @@ export const resources = {
     translation: {
       nav: {
         home: 'Home',
+        organisation: 'Organisation',
         verein: 'Verein',
         infra: 'Infrastruktur',
+        science: 'Wissenschaft',
         research: 'Forschung',
         lehre: 'Lehre',
-        map: 'Karte',
-        webcam: 'Webcam / Wetter',
         geology: 'Geologie',
         biodiversity: 'Flora & Fauna',
+        location: 'Standort',
+        map: 'Karte',
+        webcam: 'Webcam / Wetter',
         contact: 'Kontakt',
       },
       sections: {
