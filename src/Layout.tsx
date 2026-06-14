@@ -1,9 +1,11 @@
-import { Suspense, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Outlet } from 'react-router-dom'
-import { Head } from 'vite-react-ssg'
-import { I18n, useI18n, useSyncLng } from './i18n'
 import './layout.css'
+
+import { I18n, useI18n, useSyncLng } from './i18n.tsx'
+import { Suspense, useState } from 'react'
+
+import { Head } from 'vite-react-ssg'
+import { Outlet } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function Layout() {
   return (
@@ -23,7 +25,7 @@ function LayoutContent() {
     <>
       <Head>
         <meta charSet="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/react.svg" />
+        {/* <link rel="icon" type="image/svg+xml" href="/react.svg" /> */}
         <title>head test {state ? 'A' : 'B'}</title>
         <body className={`body-class-in-head-${state ? 'a' : 'b'}`} />
       </Head>

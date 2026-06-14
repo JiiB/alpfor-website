@@ -1,11 +1,12 @@
-import { lazy } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
-import { ClientOnly } from 'vite-react-ssg'
-import { useI18n } from '../i18n'
 import './a.css'
 
-const ACount = lazy(() => import('../components/a-count'))
+import { ClientOnly } from 'vite-react-ssg'
+import { Link } from 'react-router-dom'
+import { lazy } from 'react'
+import { useI18n } from '../i18n.tsx'
+import { useTranslation } from 'react-i18next'
+
+const ACount = lazy(() => import('../components/a-count.tsx'))
 
 export default function A() {
   const { withLngBase } = useI18n()

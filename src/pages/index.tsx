@@ -1,8 +1,7 @@
+import { Link } from 'react-router-dom'
+import { useI18n } from '../i18n.tsx'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
-import reactLogo from '../assets/react.svg'
-import { useI18n } from '../i18n'
 
 // import { Link, useNavigate } from 'react-router-dom'
 
@@ -14,7 +13,7 @@ export default function Index() {
   return (
     <>
       <div>
-        <img src={reactLogo} />
+
       </div>
       <h1>Vite + React</h1>
       <div className="card">

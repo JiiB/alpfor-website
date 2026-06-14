@@ -1,9 +1,10 @@
+import './App.css'
+
+import Layout from './Layout.tsx'
 import type { RouteRecord } from 'vite-react-ssg'
+import { resources } from './i18n.tsx'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { resources } from './i18n'
-import Layout from './Layout'
-import './App.css'
 
 export const routes: RouteRecord[] = [
   {
@@ -13,15 +14,15 @@ export const routes: RouteRecord[] = [
     children: [
       {
         path: 'a',
-        lazy: () => import('./pages/a'),
+        lazy: () => import('./pages/a.tsx'),
       },
       {
         index: true,
-        lazy: () => defaultToComponent(import('./pages/index')),
+        lazy: () => defaultToComponent(import('./pages/index.tsx')),
       },
       {
         path: 'nest/:b',
-        lazy: () => defaultToComponent(import('./pages/nest/[b]')),
+        lazy: () => defaultToComponent(import('./pages/nest/[b].tsx')),
       },
     ],
   },
