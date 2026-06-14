@@ -15,15 +15,18 @@ export default function Verein() {
         <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
           {t('pages.verein.personnelHeading')}
         </h2>
-        <dl className="font-sans text-lg text-alpfor-forest leading-relaxed mb-xl grid gap-xs" style={{ gridTemplateColumns: 'auto 1fr' }}>
-          <dt className="text-alpfor-rock pr-lg">{t('pages.verein.executiveLabel')}:</dt>
-          <dd className="font-medium">Dr. Erika Hiltbrunner</dd>
-          <dt className="text-alpfor-rock pr-lg">{t('pages.verein.presidentLabel')}:</dt>
-          <dd className="font-medium">Prof. em. Dr. Christian Körner</dd>
-          <dt className="text-alpfor-rock pr-lg">{t('pages.verein.vpLabel')}:</dt>
-          <dd className="font-medium">Prof. em. Dr. Jürg Stöcklin</dd>
-          <dt className="text-alpfor-rock pr-lg">{t('pages.verein.financeLabel')}:</dt>
-          <dd className="font-medium">Franziska Grob</dd>
+        <dl className="font-sans text-lg text-alpfor-forest leading-relaxed mb-xl grid grid-cols-1 sm:grid-cols-[auto_1fr] sm:gap-x-lg sm:gap-y-xs">
+          {([
+            [t('pages.verein.executiveLabel'), 'Dr. Erika Hiltbrunner'],
+            [t('pages.verein.presidentLabel'), 'Prof. em. Dr. Christian Körner'],
+            [t('pages.verein.vpLabel'), 'Prof. em. Dr. Jürg Stöcklin'],
+            [t('pages.verein.financeLabel'), 'Franziska Grob'],
+          ] as [string, string][]).map(([label, name]) => (
+            <div key={name} className="contents">
+              <dt className="text-alpfor-rock">{label}:</dt>
+              <dd className="font-medium mb-sm sm:mb-0">{name}</dd>
+            </div>
+          ))}
         </dl>
 
         <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
