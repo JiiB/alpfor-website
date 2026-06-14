@@ -1,22 +1,36 @@
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import heroImage from '../assets/background/furka-summer.jpg'
+import img1 from '../assets/background/furka-summer.jpg'
+import img2 from '../assets/background/IMG_3036.jpeg'
+import img3 from '../assets/background/IMG_3046.jpeg'
+
+const slides = [img1, img2, img3]
 
 export default function Index() {
   const { t } = useTranslation()
+  const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => setActive(i => (i + 1) % slides.length), 5000)
+    return () => clearInterval(id)
+  }, [])
 
   return (
     <>
-      {/* Full-bleed hero */}
-      <div className="relative">
+      {/* Full-bleed hero slideshow */}
+      <div className="relative" style={{ height: '100svh', minHeight: '480px' }}>
+        {slides.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000"
+            style={{ opacity: i === active ? 1 : 0 }}
+          />
+        ))}
         <div
           className="absolute inset-x-0 top-0 z-10 pointer-events-none"
           style={{ height: '240px', background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%)' }}
-        />
-        <img
-          src={heroImage}
-          alt="Furka Pass in summer"
-          className="w-full object-cover object-top"
-          style={{ height: '100svh', minHeight: '480px' }}
         />
         <a
           href="#about"
