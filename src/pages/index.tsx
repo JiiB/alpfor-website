@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import stationImg from '../assets/misc/station.jpg'
+import gletscherImg from '../assets/misc/gletschervorfeld.jpg'
 import img1 from '../assets/background/furka-summer.jpg'
 import img2 from '../assets/background/IMG_3036.jpeg'
 import img3 from '../assets/background/IMG_3046.jpeg'
@@ -38,7 +40,7 @@ export default function Index() {
   return (
     <>
       {/* Full-bleed hero slideshow */}
-      <div className="relative" style={{ height: '100svh', minHeight: '480px' }}>
+      <div className="relative overflow-hidden" style={{ height: '100svh', minHeight: '480px' }}>
         {slides.map((src, i) => (
           <img
             key={src}
@@ -68,7 +70,7 @@ export default function Index() {
         />
 
         {/* News panel — floating, left-aligned, above bottom */}
-        <div className="absolute left-lg z-20" style={{ bottom: '80px' }}>
+        <div className="absolute left-lg z-20" style={{ bottom: '80px', maxWidth: 'calc(100% - var(--spacing-lg) * 2)' }}>
           <h2 className="font-heading text-4xl font-bold text-white/70 mb-md leading-none">
             {t('news.title')}
           </h2>
@@ -93,7 +95,7 @@ export default function Index() {
         <a
           href="#about"
           aria-label="Scroll to content"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white/70 hover:text-white transition-colors"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white/70 hover:text-white transition-colors"
         >
           <svg width="44" height="44" viewBox="0 0 28 28" fill="none">
             <path d="M6 10l8 8 8-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -113,9 +115,13 @@ export default function Index() {
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">
             {t('sections.about.body')}
           </p>
-          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-xl">
             {t('sections.about.body2')}
           </p>
+          <div className="grid grid-cols-2 gap-md">
+            <img src={stationImg} alt="ALPFOR Station" className="w-full h-64 object-cover rounded-lg" />
+            <img src={gletscherImg} alt="Gletschervorfeld Furka" className="w-full h-64 object-cover rounded-lg" />
+          </div>
         </section>
       </article>
     </>

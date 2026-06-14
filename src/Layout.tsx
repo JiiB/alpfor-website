@@ -4,7 +4,7 @@ import { I18n, useI18n, useSyncLng } from './i18n.tsx'
 import { Suspense, useEffect, useState } from 'react'
 
 import { Head } from 'vite-react-ssg'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import { LanguageSwitch } from './components/LanguageSwitch.tsx'
 import { Nav } from './components/Nav.tsx'
 import { Footer } from './components/Footer.tsx'
@@ -21,7 +21,12 @@ export default function Layout() {
 const LayoutContent = () => {
   useSyncLng()
   const { withLngBase } = useI18n()
+  const { pathname } = useLocation()
   const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
