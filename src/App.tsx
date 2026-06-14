@@ -20,6 +20,8 @@ export const routes: RouteRecord[] = [
       { path: 'karte', lazy: () => defaultToComponent(import('./pages/karte.tsx')) },
       { path: 'webcam', lazy: () => defaultToComponent(import('./pages/webcam.tsx')) },
       { path: 'kontakt', lazy: () => defaultToComponent(import('./pages/kontakt.tsx')) },
+      { path: 'links', lazy: () => defaultToComponent(import('./pages/links.tsx')) },
+      { path: 'impressum', lazy: () => defaultToComponent(import('./pages/impressum.tsx')) },
     ],
   },
   {

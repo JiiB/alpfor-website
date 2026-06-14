@@ -50,6 +50,26 @@ export const resources = {
           body: 'Live images from cameras positioned across the Furka Pass area provide real-time documentation of weather conditions, snow cover, and seasonal phenology. Images are archived at hourly intervals and contribute to the station\'s long-term visual record dating back to 2004.',
           body2: 'Current meteorological data — air temperature, precipitation, wind speed and direction, global radiation, and snow depth — are transmitted in real time from the station\'s automatic weather station network and displayed here with a 15-minute update interval.',
         },
+        links: {
+          title: 'Links',
+          body: 'A curated collection of links to partner institutions, data repositories, and monitoring networks relevant to alpine biodiversity research.',
+        },
+        impressum: {
+          title: 'Imprint',
+          responsible: 'Responsible for this website',
+          name: 'ALPFOR — Alpine Biodiversity Research Station Furka',
+          institution: 'University of Basel, Department of Environmental Sciences',
+          address: 'Schönbeinstrasse 6, 4056 Basel, Switzerland',
+          email: 'sekretariat-botschoen@unibas.ch',
+          phone: '+41 61 207 23 11',
+          disclaimer: 'Despite careful content control we assume no liability for the content of external links. The operators of linked pages are solely responsible for their content.',
+          copyright: 'All content © ALPFOR / University of Basel. Reproduction for non-commercial scientific purposes is permitted with attribution.',
+        },
+      },
+      footer: {
+        links: 'Links',
+        impressum: 'Imprint',
+        copyright: '© ALPFOR / University of Basel',
       },
       sections: {
         about: {
@@ -122,6 +142,26 @@ export const resources = {
           body: 'Live-Aufnahmen von Kameras an verschiedenen Standorten rund um den Furkapass ermöglichen die Echtzeitdokumentation von Wetterbedingungen, Schneebedeckung und saisonaler Phänologie. Die Bilder werden stündlich archiviert und ergänzen die visuelle Langzeitdokumentation der Station, die bis ins Jahr 2004 zurückreicht.',
           body2: 'Aktuelle Meteorologiedaten — Lufttemperatur, Niederschlag, Windgeschwindigkeit und -richtung, Globalstrahlung und Schneehöhe — werden in Echtzeit vom automatischen Wetterstationnetz der Station übertragen und hier im 15-Minuten-Takt aktualisiert angezeigt.',
         },
+        links: {
+          title: 'Links',
+          body: 'Eine kuratierte Sammlung von Links zu Partnerinstitutionen, Datenspeichern und Monitoring-Netzwerken im Bereich der alpinen Biodiversitätsforschung.',
+        },
+        impressum: {
+          title: 'Impressum',
+          responsible: 'Verantwortlich für diese Website',
+          name: 'ALPFOR — Alpine Biodiversitäts-Forschungsstation Furka',
+          institution: 'Universität Basel, Departement Umweltwissenschaften',
+          address: 'Schönbeinstrasse 6, 4056 Basel, Schweiz',
+          email: 'sekretariat-botschoen@unibas.ch',
+          phone: '+41 61 207 23 11',
+          disclaimer: 'Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschliesslich deren Betreiber verantwortlich.',
+          copyright: 'Alle Inhalte © ALPFOR / Universität Basel. Reproduktion für nicht-kommerzielle wissenschaftliche Zwecke mit Quellenangabe gestattet.',
+        },
+      },
+      footer: {
+        links: 'Links',
+        impressum: 'Impressum',
+        copyright: '© ALPFOR / Universität Basel',
       },
       sections: {
         about: {

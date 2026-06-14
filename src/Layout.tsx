@@ -7,6 +7,7 @@ import { Head } from 'vite-react-ssg'
 import { Link, Outlet } from 'react-router-dom'
 import { LanguageSwitch } from './components/LanguageSwitch.tsx'
 import { Nav } from './components/Nav.tsx'
+import { Footer } from './components/Footer.tsx'
 import logo from './assets/logo.svg'
 
 export default function Layout() {
@@ -60,6 +61,8 @@ const LayoutContent = () => {
           <Outlet />
         </Suspense>
       </main>
+
+      <Footer />
     </>
   )
 }
