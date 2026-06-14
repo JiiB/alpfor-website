@@ -1,13 +1,13 @@
 import './index.css'
 
 import { I18n, useI18n, useSyncLng } from './i18n.tsx'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import { Suspense, useEffect, useState } from 'react'
 
+import { Footer } from './components/Footer.tsx'
 import { Head } from 'vite-react-ssg'
-import { Link, Outlet, useLocation } from 'react-router-dom'
 import { LanguageSwitch } from './components/LanguageSwitch.tsx'
 import { Nav } from './components/Nav.tsx'
-import { Footer } from './components/Footer.tsx'
 import logo from './assets/logo.svg'
 
 export default function Layout() {
@@ -54,7 +54,7 @@ const LayoutContent = () => {
             src={logo}
             alt="ALPFOR"
             className="h-20 w-auto"
-            style={{ filter: 'brightness(0) invert(1)' }}
+            style={{ filter: 'brightness(0) invert(1) drop-shadow(0 0px 2px rgba(0,0,0,0.85))' }}
           />
         </Link>
         <Nav />
