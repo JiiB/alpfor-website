@@ -1,69 +1,51 @@
 import { useTranslation } from 'react-i18next'
-
-type SectionProps = {
-  id: string
-  title: string
-  body: string
-  body2?: string
-}
-
-const Section = ({ id, title, body, body2 }: SectionProps) => (
-  <section id={id} className="border-t border-alpfor-rock/25 pt-xl">
-    <h2 className="font-heading text-4xl font-semibold text-alpfor-blue mb-md leading-tight">
-      {title}
-    </h2>
-    {body.split('\n').map((line, i) => (
-      <p key={i} className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">
-        {line}
-      </p>
-    ))}
-    {body2 && (
-      <p className="font-sans text-lg text-alpfor-forest leading-relaxed">
-        {body2}
-      </p>
-    )}
-  </section>
-)
+import heroImage from '../assets/background/furka-summer.jpg'
 
 export default function Index() {
   const { t } = useTranslation()
 
   return (
-    <article
-      className="mx-auto px-lg py-xxl"
-      style={{ maxWidth: 'var(--container-standard)' }}
-    >
-      <div className="flex flex-col gap-xl">
-        <Section
-          id="about"
-          title={t('sections.about.title')}
-          body={t('sections.about.body')}
-          body2={t('sections.about.body2')}
+    <>
+      {/* Full-bleed hero */}
+      <div className="relative">
+        <div
+          className="absolute inset-x-0 top-0 z-10 pointer-events-none"
+          style={{ height: '240px', background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%)' }}
         />
-        <Section
-          id="research"
-          title={t('sections.research.title')}
-          body={t('sections.research.body')}
-          body2={t('sections.research.body2')}
+        <img
+          src={heroImage}
+          alt="Furka Pass in summer"
+          className="w-full object-cover object-top"
+          style={{ height: '100svh', minHeight: '480px' }}
         />
-        <Section
-          id="biodiversity"
-          title={t('sections.biodiversity.title')}
-          body={t('sections.biodiversity.body')}
-          body2={t('sections.biodiversity.body2')}
-        />
-        <Section
-          id="geology"
-          title={t('sections.geology.title')}
-          body={t('sections.geology.body')}
-          body2={t('sections.geology.body2')}
-        />
-        <Section
-          id="contact"
-          title={t('sections.contact.title')}
-          body={t('sections.contact.body')}
-        />
+        <a
+          href="#about"
+          aria-label="Scroll to content"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white/70 hover:text-white transition-colors"
+        >
+          <svg width="44" height="44" viewBox="0 0 28 28" fill="none">
+            <path d="M6 10l8 8 8-8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
       </div>
-    </article>
+
+      {/* About section */}
+      <article
+        className="mx-auto px-lg py-xxl"
+        style={{ maxWidth: 'var(--container-standard)' }}
+      >
+        <section id="about">
+          <h2 className="font-heading text-4xl font-semibold text-alpfor-blue mb-md leading-tight">
+            {t('sections.about.title')}
+          </h2>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">
+            {t('sections.about.body')}
+          </p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">
+            {t('sections.about.body2')}
+          </p>
+        </section>
+      </article>
+    </>
   )
 }

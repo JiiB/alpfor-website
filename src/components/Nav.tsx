@@ -1,39 +1,41 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useI18n } from '../i18n.tsx'
 import { LanguageSwitch } from './LanguageSwitch.tsx'
 
-type NavLeaf = { labelKey: string; href: string }
+type NavLeaf = { labelKey: string; to: string }
 type NavGroup = { labelKey: string; children: NavLeaf[] }
 type NavItem = NavLeaf | NavGroup
 
 const isGroup = (item: NavItem): item is NavGroup => 'children' in item
 
 const navItems: NavItem[] = [
-  { labelKey: 'nav.home', href: '#' },
+  { labelKey: 'nav.home', to: '/' },
   {
     labelKey: 'nav.organisation',
     children: [
-      { labelKey: 'nav.verein', href: '#verein' },
-      { labelKey: 'nav.infra', href: '#infrastruktur' },
+      { labelKey: 'nav.verein', to: '/verein' },
+      { labelKey: 'nav.infra', to: '/infrastruktur' },
     ],
   },
   {
     labelKey: 'nav.science',
     children: [
-      { labelKey: 'nav.research', href: '#research' },
-      { labelKey: 'nav.lehre', href: '#lehre' },
-      { labelKey: 'nav.geology', href: '#geology' },
-      { labelKey: 'nav.biodiversity', href: '#biodiversity' },
+      { labelKey: 'nav.research', to: '/forschung' },
+      { labelKey: 'nav.lehre', to: '/lehre' },
+      { labelKey: 'nav.geology', to: '/geologie' },
+      { labelKey: 'nav.biodiversity', to: '/flora-fauna' },
     ],
   },
   {
     labelKey: 'nav.location',
     children: [
-      { labelKey: 'nav.map', href: '#karte' },
-      { labelKey: 'nav.webcam', href: '#webcam' },
+      { labelKey: 'nav.map', to: '/karte' },
+      { labelKey: 'nav.webcam', to: '/webcam' },
     ],
   },
-  { labelKey: 'nav.contact', href: '#contact' },
+  { labelKey: 'nav.contact', to: '/kontakt' },
 ]
 
 const Chevron = ({ open }: { open: boolean }) => (
@@ -50,6 +52,7 @@ const Chevron = ({ open }: { open: boolean }) => (
 
 export const Nav = () => {
   const { t } = useTranslation()
+  const { withLngBase } = useI18n()
   const [activeDesktop, setActiveDesktop] = useState<string | null>(null)
   const [activeMobile, setActiveMobile] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -61,13 +64,13 @@ export const Nav = () => {
         {navItems.map(item => {
           if (!isGroup(item)) {
             return (
-              <a
+              <Link
                 key={item.labelKey}
-                href={item.href}
+                to={withLngBase(item.to)}
                 className="font-sans text-sm text-white/80 hover:text-white transition-colors px-xs py-1 whitespace-nowrap"
               >
                 {t(item.labelKey)}
-              </a>
+              </Link>
             )
           }
 
@@ -90,13 +93,13 @@ export const Nav = () => {
               {open && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 min-w-[160px] bg-alpfor-blue border border-white/10 rounded-md shadow-lg overflow-hidden">
                   {item.children.map(child => (
-                    <a
+                    <Link
                       key={child.labelKey}
-                      href={child.href}
+                      to={withLngBase(child.to)}
                       className="block font-sans text-sm text-white/80 hover:text-white hover:bg-white/8 transition-colors px-sm py-xs whitespace-nowrap"
                     >
                       {t(child.labelKey)}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -124,14 +127,14 @@ export const Nav = () => {
             {navItems.map(item => {
               if (!isGroup(item)) {
                 return (
-                  <a
+                  <Link
                     key={item.labelKey}
-                    href={item.href}
+                    to={withLngBase(item.to)}
                     onClick={() => setMobileOpen(false)}
                     className="font-sans text-sm text-white/80 hover:text-white hover:bg-white/5 transition-colors px-lg py-sm"
                   >
                     {t(item.labelKey)}
-                  </a>
+                  </Link>
                 )
               }
 
@@ -149,14 +152,14 @@ export const Nav = () => {
                   {expanded && (
                     <div className="bg-white/5 border-t border-white/10">
                       {item.children.map(child => (
-                        <a
+                        <Link
                           key={child.labelKey}
-                          href={child.href}
+                          to={withLngBase(child.to)}
                           onClick={() => setMobileOpen(false)}
                           className="block font-sans text-sm text-white/70 hover:text-white transition-colors pl-xxl pr-lg py-xs"
                         >
                           {t(child.labelKey)}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}

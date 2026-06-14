@@ -24,6 +24,33 @@ export const resources = {
         webcam: 'Webcam / Weather',
         contact: 'Contact',
       },
+      pages: {
+        verein: {
+          title: 'Association',
+          body: 'ALPFOR is constituted as a non-profit association under Swiss law. The association brings together universities, research institutes, and individual scientists committed to long-term ecological monitoring in the alpine zone. Membership is open to institutions and individuals who support the station\'s scientific mission.',
+          body2: 'The association\'s board oversees strategic direction, fundraising, and partnerships with public agencies and private foundations. Annual general assemblies provide members with full transparency on financial accounts, research outputs, and operational decisions.',
+        },
+        infrastruktur: {
+          title: 'Infrastructure',
+          body: 'The research station at the Furka Pass provides a fully equipped base for year-round fieldwork at high altitude. Facilities include a heated laboratory, instrument storage, sample preparation rooms, meteorological masts, and dormitory accommodation for visiting researchers.',
+          body2: 'Instrument networks deployed across the study area include automatic weather stations, soil temperature and moisture loggers, eddy-covariance flux towers, and a network of time-lapse cameras monitoring snow cover dynamics and phenological events.',
+        },
+        lehre: {
+          title: 'Teaching',
+          body: 'ALPFOR hosts intensive field courses for graduate students in ecology, earth sciences, and environmental biology. Courses are designed around primary data collection in the field, giving students direct experience with professional monitoring protocols, statistical analysis, and scientific reporting.',
+          body2: 'Partner universities include ETH Zurich, the University of Bern, and several European institutions. Teaching activities are coordinated with the research calendar to minimise disruption to long-term monitoring and to maximise the value of field time.',
+        },
+        karte: {
+          title: 'Map',
+          body: 'The ALPFOR study area covers approximately 12 km² centred on the Furka Pass (2429 m a.s.l.), spanning elevations from 2200 m to 3100 m. Permanent study plots, transects, sensor networks, and infrastructure are georeferenced and maintained in a GIS database updated annually.',
+          body2: 'Interactive maps of the study area, sensor locations, and biodiversity survey plots are available to registered researchers through the ALPFOR data portal.',
+        },
+        webcam: {
+          title: 'Webcam / Weather',
+          body: 'Live images from cameras positioned across the Furka Pass area provide real-time documentation of weather conditions, snow cover, and seasonal phenology. Images are archived at hourly intervals and contribute to the station\'s long-term visual record dating back to 2004.',
+          body2: 'Current meteorological data — air temperature, precipitation, wind speed and direction, global radiation, and snow depth — are transmitted in real time from the station\'s automatic weather station network and displayed here with a 15-minute update interval.',
+        },
+      },
       sections: {
         about: {
           title: 'About ALPFOR',
@@ -68,6 +95,33 @@ export const resources = {
         map: 'Karte',
         webcam: 'Webcam / Wetter',
         contact: 'Kontakt',
+      },
+      pages: {
+        verein: {
+          title: 'Verein',
+          body: 'ALPFOR ist als gemeinnütziger Verein nach Schweizer Recht konstituiert. Der Verein vereint Universitäten, Forschungsinstitute und einzelne Wissenschaftlerinnen und Wissenschaftler, die dem Langzeitmonitoring im alpinen Raum verpflichtet sind. Die Mitgliedschaft steht Institutionen und Einzelpersonen offen, die die wissenschaftliche Mission der Station unterstützen.',
+          body2: 'Der Vorstand des Vereins verantwortet die strategische Ausrichtung, die Mittelbeschaffung sowie Partnerschaften mit öffentlichen Stellen und privaten Stiftungen. Jährliche Generalversammlungen bieten den Mitgliedern vollständige Transparenz über Jahresabschlüsse, Forschungsergebnisse und operative Entscheide.',
+        },
+        infrastruktur: {
+          title: 'Infrastruktur',
+          body: 'Die Forschungsstation am Furkapass bietet eine vollständig ausgestattete Basis für ganzjährige Feldarbeit auf grosser Höhe. Zur Ausstattung gehören ein beheiztes Labor, Gerätekammern, Probenvorbereitungsräume, meteorologische Masten sowie Unterkunftsmöglichkeiten für Gastforschende.',
+          body2: 'Die im Untersuchungsgebiet installierten Gerätenetze umfassen automatische Wetterstationen, Boden-Temperatur- und Feuchtigkeitsdatenlogger, Eddy-Kovarianz-Fluxtürme sowie ein Netz von Zeitrafferungskameras zur Überwachung der Schneebedeckungsdynamik und phänologischer Ereignisse.',
+        },
+        lehre: {
+          title: 'Lehre',
+          body: 'ALPFOR bietet intensive Feldkurse für Doktorierende und Masterstudierende in Ökologie, Geowissenschaften und Umweltbiologie an. Die Kurse sind auf die primäre Datenerhebung im Gelände ausgerichtet und vermitteln den Studierenden direkte Erfahrung mit professionellen Monitoring-Protokollen, statistischer Auswertung und wissenschaftlicher Berichterstattung.',
+          body2: 'Zu den Partneruniversitäten zählen die ETH Zürich, die Universität Bern und mehrere europäische Institutionen. Die Lehrveranstaltungen werden mit dem Forschungskalender abgestimmt, um das Langzeitmonitoring möglichst wenig zu beeinträchtigen und den Mehrwert der Feldzeit zu maximieren.',
+        },
+        karte: {
+          title: 'Karte',
+          body: 'Das ALPFOR-Untersuchungsgebiet umfasst rund 12 km² mit dem Furkapass (2429 m ü.M.) als Zentrum und erstreckt sich über Höhenlagen von 2200 m bis 3100 m. Dauerbeobachtungsflächen, Transekte, Sensornetzwerke und Infrastruktur sind georeferenziert und in einer jährlich aktualisierten GIS-Datenbank erfasst.',
+          body2: 'Interaktive Karten des Untersuchungsgebiets, der Sensorstandorte und der Biodiversitäts-Erhebungsflächen stehen registrierten Forschenden über das ALPFOR-Datenportal zur Verfügung.',
+        },
+        webcam: {
+          title: 'Webcam / Wetter',
+          body: 'Live-Aufnahmen von Kameras an verschiedenen Standorten rund um den Furkapass ermöglichen die Echtzeitdokumentation von Wetterbedingungen, Schneebedeckung und saisonaler Phänologie. Die Bilder werden stündlich archiviert und ergänzen die visuelle Langzeitdokumentation der Station, die bis ins Jahr 2004 zurückreicht.',
+          body2: 'Aktuelle Meteorologiedaten — Lufttemperatur, Niederschlag, Windgeschwindigkeit und -richtung, Globalstrahlung und Schneehöhe — werden in Echtzeit vom automatischen Wetterstationnetz der Station übertragen und hier im 15-Minuten-Takt aktualisiert angezeigt.',
+        },
       },
       sections: {
         about: {
