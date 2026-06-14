@@ -126,7 +126,7 @@ export default function FloraFauna() {
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">{c.plants1}</p>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-xl">{c.plants2}</p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-md">
             {species.map(sp => (
               <figure key={sp.name}>
                 <img
