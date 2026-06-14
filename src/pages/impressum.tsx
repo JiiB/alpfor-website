@@ -12,17 +12,17 @@ export default function Impressum() {
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
             {t('pages.impressum.publisherHeading')}
           </h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed">{t('pages.impressum.publisherName')}</p>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed">{t('pages.impressum.publisherLine2')}</p>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed">{t('pages.impressum.publisherAddress')}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">{t('pages.impressum.publisherName')}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">{t('pages.impressum.publisherLine2')}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">{t('pages.impressum.publisherAddress')}</p>
         </section>
 
         <section className="border-t border-alpfor-rock/25 pt-xl mb-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
             {t('pages.impressum.creditsHeading')}
           </h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed">{t('pages.impressum.creditsText')}</p>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed mt-sm">
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">{t('pages.impressum.creditsText')}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mt-sm">
             {t('pages.impressum.creditsContact')}{' '}
             <a
               href={`mailto:${t('pages.impressum.creditsEmail')}`}
@@ -37,7 +37,7 @@ export default function Impressum() {
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
             {t('pages.impressum.websiteHeading')}
           </h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed">
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">
             {t('pages.impressum.websiteText')}{' '}
             <a
               href="http://github.com/jiib"
@@ -54,14 +54,14 @@ export default function Impressum() {
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
             {t('pages.impressum.disclaimerHeading')}
           </h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed">{t('pages.impressum.disclaimer')}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">{t('pages.impressum.disclaimer')}</p>
         </section>
 
         <section className="border-t border-alpfor-rock/25 pt-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
             {t('pages.impressum.photoHeading')}
           </h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed">{t('pages.impressum.photoText')}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">{t('pages.impressum.photoText')}</p>
         </section>
       </article>
     </>

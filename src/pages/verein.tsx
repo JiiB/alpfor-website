@@ -15,7 +15,7 @@ export default function Verein() {
         <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
           {t('pages.verein.personnelHeading')}
         </h2>
-        <dl className="font-sans text-base text-alpfor-forest leading-relaxed mb-xl grid gap-xs" style={{ gridTemplateColumns: 'auto 1fr' }}>
+        <dl className="font-sans text-lg text-alpfor-forest leading-relaxed mb-xl grid gap-xs" style={{ gridTemplateColumns: 'auto 1fr' }}>
           <dt className="text-alpfor-rock pr-lg">{t('pages.verein.executiveLabel')}:</dt>
           <dd className="font-medium">Dr. Erika Hiltbrunner</dd>
           <dt className="text-alpfor-rock pr-lg">{t('pages.verein.presidentLabel')}:</dt>
@@ -29,7 +29,7 @@ export default function Verein() {
         <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
           {t('pages.verein.statutesHeading')}
         </h2>
-        <ul className="font-sans text-base text-alpfor-forest leading-relaxed flex flex-col gap-sm list-disc pl-lg">
+        <ul className="font-sans text-lg text-alpfor-forest leading-relaxed flex flex-col gap-sm list-disc pl-lg">
           <li>{t('pages.verein.statute1')}</li>
           <li>{t('pages.verein.statute2')}</li>
           <li>{t('pages.verein.statute3')}</li>

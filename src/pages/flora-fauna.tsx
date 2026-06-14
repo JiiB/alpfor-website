@@ -92,8 +92,8 @@ export default function FloraFauna() {
         {/* Hotspot Furka */}
         <section className="mb-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">{c.hotspotHeading}</h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed mb-sm">{c.hotspot1}</p>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed mb-lg">{c.hotspot2}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">{c.hotspot1}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-lg">{c.hotspot2}</p>
 
           {/* Book reference box */}
           <div className="flex items-start gap-lg p-md border border-alpfor-rock/30 rounded-lg bg-alpfor-glacier/10">
@@ -123,8 +123,8 @@ export default function FloraFauna() {
         {/* Alpine plants */}
         <section className="border-t border-alpfor-rock/25 pt-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">{c.plantsHeading}</h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed mb-sm">{c.plants1}</p>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed mb-xl">{c.plants2}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">{c.plants1}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-xl">{c.plants2}</p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-md">
             {species.map(sp => (

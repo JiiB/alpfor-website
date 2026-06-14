@@ -26,7 +26,7 @@ export const Footer = () => {
           </Link>
 
           {/* Address */}
-          <address className="not-italic font-sans text-sm text-white/70 leading-relaxed">
+          <address className="not-italic font-sans text-base text-white/70 leading-relaxed">
             <p className="font-semibold text-white mb-xs">ALPFOR</p>
             <p>Universität Basel</p>
             <p>Departement Umweltwissenschaften</p>
@@ -53,19 +53,19 @@ export const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-xl pt-sm border-t border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-sm">
-          <p className="font-sans text-xs text-white/50">
-            {t('footer.copyright')}
+          <p className="font-sans text-sm text-white/50">
+            {t('footer.copyright')} ({new Date().getFullYear()})
           </p>
           <nav className="flex items-center gap-md">
             <Link
               to={withLngBase('/links')}
-              className="font-sans text-xs text-white/60 hover:text-white transition-colors"
+              className="font-sans text-sm text-white/60 hover:text-white transition-colors"
             >
               {t('footer.links')}
             </Link>
             <Link
               to={withLngBase('/impressum')}
-              className="font-sans text-xs text-white/60 hover:text-white transition-colors"
+              className="font-sans text-sm text-white/60 hover:text-white transition-colors"
             >
               {t('footer.impressum')}
             </Link>

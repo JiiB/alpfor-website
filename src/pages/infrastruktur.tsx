@@ -83,40 +83,40 @@ export default function Infrastruktur() {
         {/* Haus Carex */}
         <section className="mb-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.carexName}</h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed mb-sm">{c.carexDesc}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">{c.carexDesc}</p>
           {photoStrip([b8, b9, b10, b11], c.carexName)}
         </section>
 
         {/* Haus Rumex */}
         <section className="mb-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.rumexName}</h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed mb-sm">{c.rumexDesc}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">{c.rumexDesc}</p>
           {photoStrip([b12, b13, b14, b15], c.rumexName)}
         </section>
 
         {/* Haus Ibex */}
         <section className="mb-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.ibexName}</h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed mb-sm">{c.ibexDesc}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">{c.ibexDesc}</p>
           {photoStrip([b4, b5, b6, b7], c.ibexName)}
         </section>
 
         {/* Capacity, hours, costs */}
         <section className="border-t border-alpfor-rock/25 pt-xl mb-lg">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.capacityHeading}</h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed">{c.capacity}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">{c.capacity}</p>
         </section>
 
         <section className="border-t border-alpfor-rock/25 pt-xl mb-lg">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.hoursHeading}</h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed">{c.hours}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">{c.hours}</p>
         </section>
 
         <section className="border-t border-alpfor-rock/25 pt-xl mb-lg">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.accomHeading}</h2>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed mb-md">{c.accom}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.accom}</p>
           <h3 className="font-heading text-lg font-semibold text-alpfor-blue mb-sm">{c.costsHeading}</h3>
-          <p className="font-sans text-base text-alpfor-forest leading-relaxed">{c.costs}</p>
+          <p className="font-sans text-lg text-alpfor-forest leading-relaxed">{c.costs}</p>
         </section>
       </article>
     </>

@@ -17,7 +17,7 @@ export default function Kontakt() {
             : 'Please note that ALPFOR operates on a non-profit basis and scientific staff are responsible for running the station. Accordingly there are no telephone or office hours, but we can be reached by email:'}
         </p>
 
-        <div className="font-sans text-base text-alpfor-forest leading-relaxed mb-lg">
+        <div className="font-sans text-lg text-alpfor-forest leading-relaxed mb-lg">
           <p className="mb-xs">
             Erika Hiltbrunner:{' '}
             <a href="mailto:erika.hiltbrunner@unibas.ch" className="text-alpfor-blue hover:text-alpfor-forest transition-colors">
@@ -38,7 +38,7 @@ export default function Kontakt() {
             : 'You can also contact the administrative office in Basel:'}
         </p>
 
-        <address className="not-italic font-sans text-base text-alpfor-forest leading-relaxed">
+        <address className="not-italic font-sans text-lg text-alpfor-forest leading-relaxed">
           <p className="font-semibold">ALPFOR</p>
           <p>Universität Basel</p>
           <p>Departement Umweltwissenschaften</p>

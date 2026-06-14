@@ -42,7 +42,7 @@ export default function Lehre() {
       <article className="mx-auto px-lg py-xxl" style={{ maxWidth: 'var(--container-standard)' }}>
         <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-lg">{c.intro}</p>
 
-        <p className="font-sans text-base text-alpfor-forest leading-relaxed mb-md">{c.textbookNote}</p>
+        <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.textbookNote}</p>
 
         <ul className="flex flex-col gap-sm mb-xl">
           <li>
