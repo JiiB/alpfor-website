@@ -1,33 +1,69 @@
-import { Link } from 'react-router-dom'
-import { useI18n } from '../i18n.tsx'
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-// import { Link, useNavigate } from 'react-router-dom'
+type SectionProps = {
+  id: string
+  title: string
+  body: string
+  body2?: string
+}
+
+const Section = ({ id, title, body, body2 }: SectionProps) => (
+  <section id={id} className="border-t border-alpfor-rock/25 pt-xl">
+    <h2 className="font-heading text-4xl font-semibold text-alpfor-blue mb-md leading-tight">
+      {title}
+    </h2>
+    {body.split('\n').map((line, i) => (
+      <p key={i} className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">
+        {line}
+      </p>
+    ))}
+    {body2 && (
+      <p className="font-sans text-lg text-alpfor-forest leading-relaxed">
+        {body2}
+      </p>
+    )}
+  </section>
+)
 
 export default function Index() {
-  const [count, setCount] = useState(0)
   const { t } = useTranslation()
-  const { withLngBase } = useI18n()
 
   return (
-    <>
-      <div>
-
+    <article
+      className="mx-auto px-lg py-xxl"
+      style={{ maxWidth: 'var(--container-standard)' }}
+    >
+      <div className="flex flex-col gap-xl">
+        <Section
+          id="about"
+          title={t('sections.about.title')}
+          body={t('sections.about.body')}
+          body2={t('sections.about.body2')}
+        />
+        <Section
+          id="research"
+          title={t('sections.research.title')}
+          body={t('sections.research.body')}
+          body2={t('sections.research.body2')}
+        />
+        <Section
+          id="biodiversity"
+          title={t('sections.biodiversity.title')}
+          body={t('sections.biodiversity.body')}
+          body2={t('sections.biodiversity.body2')}
+        />
+        <Section
+          id="geology"
+          title={t('sections.geology.title')}
+          body={t('sections.geology.body')}
+          body2={t('sections.geology.body2')}
+        />
+        <Section
+          id="contact"
+          title={t('sections.contact.title')}
+          body={t('sections.contact.body')}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button type="button" onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <Link to={withLngBase('/a')}>{t('to')} A</Link>
-        <p>
-          {t('edit')} <code>src/App.tsx</code> {t('hmr')}
-        </p>
-      </div>
-      <p className="read-the-docs">
-        {t('desc')}
-      </p>
-    </>
+    </article>
   )
 }

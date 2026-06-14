@@ -1,5 +1,3 @@
-import './App.css'
-
 import Layout from './Layout.tsx'
 import type { RouteRecord } from 'vite-react-ssg'
 import { resources } from './i18n.tsx'
@@ -13,16 +11,8 @@ export const routes: RouteRecord[] = [
     getStaticPaths: () => Object.keys(resources),
     children: [
       {
-        path: 'a',
-        lazy: () => import('./pages/a.tsx'),
-      },
-      {
         index: true,
         lazy: () => defaultToComponent(import('./pages/index.tsx')),
-      },
-      {
-        path: 'nest/:b',
-        lazy: () => defaultToComponent(import('./pages/nest/[b].tsx')),
       },
     ],
   },
@@ -39,8 +29,7 @@ export const routes: RouteRecord[] = [
   },
 ]
 
-async function defaultToComponent(routePromise: Promise<RouteRecord & { default: any }>) {
+const defaultToComponent = async (routePromise: Promise<RouteRecord & { default: unknown }>) => {
   const routeModule = await routePromise
-
   return { ...routeModule, Component: routeModule.default }
 }
