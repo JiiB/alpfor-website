@@ -39,6 +39,8 @@ const LayoutContent = () => {
       <Head>
         <meta charSet="UTF-8" />
         <title>ALPFOR</title>
+        <meta name="theme-color" content="#003863" />
+        <meta name="msapplication-TileColor" content="#003863" />
       </Head>
 
       <header
@@ -61,7 +63,7 @@ const LayoutContent = () => {
         </div>
       </header>
 
-      <main>
+      <main className="bg-white">
         <Suspense>
           <Outlet />
         </Suspense>
