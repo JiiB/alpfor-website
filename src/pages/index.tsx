@@ -3,8 +3,36 @@ import { useTranslation } from 'react-i18next'
 import img1 from '../assets/background/furka-summer.jpg'
 import img2 from '../assets/background/IMG_3036.jpeg'
 import img3 from '../assets/background/IMG_3046.jpeg'
+import hotspotPdf from '../assets/pdf/alpfor furka hotspot WEB 2018.pdf?url'
+import summerSchoolPdf from '../assets/pdf/Flyer_SummerSchool2026.pdf?url'
 
 const slides = [img1, img2, img3]
+
+const newsItems = [
+  { label: 'HOTSPOT FURKA — Biologische Vielfalt im Gebirge', href: hotspotPdf },
+  { label: 'alpine plant ecology — Summer School 2026', href: summerSchoolPdf },
+]
+
+const PdfIcon = ({ size = 18 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    className="shrink-0 mt-[2px] text-alpfor-orange"
+  >
+    <path
+      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path d="M14 2v6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M9 13h1.5a1 1 0 0 1 0 2H9v-4h1.5a1 1 0 0 1 0 2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+    <path d="M14 11v4m0 0h1.5a1 1 0 0 0 0-2H14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)
 
 export default function Index() {
   const { t } = useTranslation()
@@ -28,10 +56,48 @@ export default function Index() {
             style={{ opacity: i === active ? 1 : 0 }}
           />
         ))}
+
+        {/* Top gradient scrim for header legibility */}
         <div
           className="absolute inset-x-0 top-0 z-10 pointer-events-none"
           style={{ height: '240px', background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%)' }}
         />
+
+        {/* Bottom gradient scrim */}
+        <div
+          className="absolute inset-x-0 bottom-0 z-10 pointer-events-none"
+          style={{ height: '280px', background: 'linear-gradient(to top, rgba(0,20,50,0.72) 0%, transparent 100%)' }}
+        />
+
+        {/* Bottom-left corner gradient for news panel */}
+        <div
+          className="absolute bottom-0 left-0 z-10 pointer-events-none"
+          style={{ width: '520px', height: '420px', background: 'radial-gradient(ellipse at bottom left, rgba(0,20,50,0.70) 0%, transparent 70%)' }}
+        />
+
+        {/* News panel — floating, left-aligned, above bottom */}
+        <div className="absolute left-lg z-20" style={{ bottom: '80px' }}>
+          <h2 className="font-heading text-4xl font-bold text-white/70 mb-md leading-none">
+            {t('news.title')}
+          </h2>
+          <ul className="flex flex-col gap-sm">
+            {newsItems.map(item => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-sm text-white/85 hover:text-white transition-colors"
+                >
+                  <PdfIcon size={22} />
+                  <span className="font-sans text-base leading-snug">{item.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Scroll indicator */}
         <a
           href="#about"
           aria-label="Scroll to content"

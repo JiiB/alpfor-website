@@ -66,6 +66,7 @@ export const resources = {
           copyright: 'All content © ALPFOR / University of Basel. Reproduction for non-commercial scientific purposes is permitted with attribution.',
         },
       },
+      news: { title: 'News' },
       footer: {
         links: 'Links',
         impressum: 'Imprint',
@@ -158,6 +159,7 @@ export const resources = {
           copyright: 'Alle Inhalte © ALPFOR / Universität Basel. Reproduktion für nicht-kommerzielle wissenschaftliche Zwecke mit Quellenangabe gestattet.',
         },
       },
+      news: { title: 'Aktuell' },
       footer: {
         links: 'Links',
         impressum: 'Impressum',
