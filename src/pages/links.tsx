@@ -64,7 +64,14 @@ export default function Links() {
                   >
                     {link.label}
                   </a>
-                  <p className="font-sans text-sm text-alpfor-rock mt-xs">{link.href}</p>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block font-sans text-sm text-alpfor-rock hover:text-alpfor-forest transition-colors mt-xs"
+                  >
+                    {link.href}
+                  </a>
                 </li>
               ))}
             </ul>

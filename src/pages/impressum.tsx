@@ -35,6 +35,23 @@ export default function Impressum() {
 
         <section className="border-t border-alpfor-rock/25 pt-xl mb-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
+            {t('pages.impressum.websiteHeading')}
+          </h2>
+          <p className="font-sans text-base text-alpfor-forest leading-relaxed">
+            {t('pages.impressum.websiteText')}{' '}
+            <a
+              href="http://github.com/jiib"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-alpfor-blue hover:text-alpfor-forest transition-colors"
+            >
+              Nino Zumstein
+            </a>
+          </p>
+        </section>
+
+        <section className="border-t border-alpfor-rock/25 pt-xl mb-xl">
+          <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-md">
             {t('pages.impressum.disclaimerHeading')}
           </h2>
           <p className="font-sans text-base text-alpfor-forest leading-relaxed">{t('pages.impressum.disclaimer')}</p>

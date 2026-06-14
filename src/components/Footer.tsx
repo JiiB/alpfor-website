@@ -20,7 +20,8 @@ export const Footer = () => {
             <img
               src={logoWithText}
               alt="ALPFOR — Alpine Forschungs- und Ausbildungsstation Furka"
-              className="h-24 w-auto"
+              className="h-auto"
+              style={{ width: '250px' }}
             />
           </Link>
 
