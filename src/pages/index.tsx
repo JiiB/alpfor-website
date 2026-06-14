@@ -10,27 +10,19 @@ const slides = [img1, img2, img3]
 
 const newsItems = [
   { label: 'HOTSPOT FURKA — Biologische Vielfalt im Gebirge', href: hotspotPdf },
-  { label: 'alpine plant ecology — Summer School 2026', href: summerSchoolPdf },
+  { label: 'Alpine Plant Ecology — Summer School 2026', href: summerSchoolPdf },
 ]
 
-const PdfIcon = ({ size = 18 }: { size?: number }) => (
+const PdfIcon = ({ size = 22 }: { size?: number }) => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
     width={size}
     height={size}
-    viewBox="0 0 24 24"
-    fill="none"
+    fill="currentColor"
+    viewBox="0 0 256 256"
     className="shrink-0 mt-[2px] text-alpfor-orange"
   >
-    <path
-      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path d="M14 2v6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M9 13h1.5a1 1 0 0 1 0 2H9v-4h1.5a1 1 0 0 1 0 2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-    <path d="M14 11v4m0 0h1.5a1 1 0 0 0 0-2H14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,112V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v24a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v72a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z" />
   </svg>
 )
 
@@ -89,7 +81,7 @@ export default function Index() {
                   rel="noopener noreferrer"
                   className="flex items-start gap-sm text-white/85 hover:text-white transition-colors"
                 >
-                  <PdfIcon size={22} />
+                  <PdfIcon />
                   <span className="font-sans text-base leading-snug">{item.label}</span>
                 </a>
               </li>
