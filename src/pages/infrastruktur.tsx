@@ -19,7 +19,8 @@ import b15 from '../assets/buildings/15.jpg'
 
 const content = {
   de: {
-    intro: 'Der Verein ALPFOR verfügt über 12 Gebäude des ehemaligen Truppenlagers, wovon bereits drei Häuser für den täglichen Gebrauch renoviert wurden (vier weitere Häuser werden zur Zeit aufgewertet). Diese Häuser sind nach prominenten Organismen benannt:',
+    intro: 'Der Verein ALPFOR verfügt über 12 Gebäude des ehemaligen Truppenlagers, wovon bereits drei Häuser für den täglichen Gebrauch renoviert wurden (vier weitere Häuser werden zur Zeit aufgewertet).',
+    introNamed: 'Diese Häuser sind nach prominenten Organismen benannt:',
     carexName: 'Haus Carex',
     carexDesc: 'Benannt nach der Pflanzengattung der Seggen, welche in alpinen Gebieten weit verbreitet sind. Dieses Haus ist zweistöckig und diente zu Militärszeiten zuerst als Kantine und später als Sanitätsgebäude. Es verfügt über eine Küche, einen Essraum sowie Betten für bis zu 12 Personen, welche vom ALPFOR Personal während der ganzen Sommersaison genutzt werden (keine Unterkunft für Besucher).',
     rumexName: 'Haus Rumex',
@@ -36,7 +37,8 @@ const content = {
     accom: 'ALPFOR ist ein gemeinnütziger Verein für alpine Forschung und Lehre und stellt seine Infrastruktur daher nicht für Tourismus zur Verfügung. Allerdings können gewisse Räumlichkeiten für Kurse und Forschungsarbeiten gemietet werden, wobei Verpflegung und Küchenpersonal selbst organisiert werden müssen. Die nächste Einkaufsmöglichkeit befindet sich in Andermatt (ca. 15 km entfernt). Handy-Empfang ist sehr gut.',
   },
   en: {
-    intro: 'The ALPFOR association owns 12 buildings from the former military compound, three of which have already been renovated for daily use (four more are currently being upgraded). These buildings are named after prominent organisms:',
+    intro: 'The ALPFOR association owns 12 buildings from the former military compound, three of which have already been renovated for daily use (four more are currently being upgraded).',
+    introNamed: 'These buildings are named after prominent organisms:',
     carexName: 'House Carex',
     carexDesc: 'Named after the genus of sedges, which are widespread in alpine areas. This two-storey building served as a canteen and later a medical facility during military times. It has a kitchen, dining room and beds for up to 12 people, used exclusively by ALPFOR staff throughout the summer season (no visitor accommodation).',
     rumexName: 'House Rumex',
@@ -57,7 +59,7 @@ const content = {
 const photoStrip = (srcs: string[], alt: string) => (
   <div className="grid grid-cols-2 md:grid-cols-4 gap-xs my-md">
     {srcs.map((src, i) => (
-      <img key={i} src={src} alt={alt} className="object-cover h-48 w-full rounded" />
+      <img key={i} src={src} alt={alt} className="object-contain h-48 w-full rounded" />
     ))}
   </div>
 )
@@ -71,14 +73,16 @@ export default function Infrastruktur() {
     <>
       <PageBanner title={t('pages.infrastruktur.title')} />
       <article className="mx-auto px-lg py-xxl" style={{ maxWidth: 'var(--container-standard)' }}>
+        <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-lg">{c.intro}</p>
+
         {/* Top overview strip */}
-        <div className="grid grid-cols-3 gap-md mb-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-md mb-lg">
           {[b1, b2, b3].map((src, i) => (
-            <img key={i} src={src} alt="ALPFOR Stationsgebäude" className="object-cover h-56 w-full rounded-lg" />
+            <img key={i} src={src} alt="ALPFOR Stationsgebäude" className="w-full h-auto rounded-lg" />
           ))}
         </div>
 
-        <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-xl">{c.intro}</p>
+        <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-xl">{c.introNamed}</p>
 
         {/* Haus Carex */}
         <section className="mb-xl">

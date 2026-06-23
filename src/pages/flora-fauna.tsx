@@ -132,7 +132,7 @@ export default function FloraFauna() {
                 <img
                   src={sp.src}
                   alt={sp.name}
-                  className="object-cover aspect-square w-full rounded-lg"
+                  className="object-cover aspect-[4/3] w-full rounded-lg"
                 />
                 <figcaption className="mt-xs text-sm italic text-alpfor-rock">
                   <span className="font-medium">{sp.name}</span>

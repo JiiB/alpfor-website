@@ -71,9 +71,9 @@ export default function Lehre() {
           </li>
         </ul>
 
-        <div className="grid grid-cols-2 gap-md">
-          <img src={kurs1} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover h-64" />
-          <img src={kurs2} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover h-64" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
+          <img src={kurs1} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+          <img src={kurs2} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
         </div>
       </article>
     </>

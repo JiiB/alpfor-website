@@ -86,7 +86,7 @@ export default function Forschung() {
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.co2Heading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.co2}</p>
           <figure>
-            <img src={bidmer} alt={c.co2Caption} className="w-full rounded-lg object-cover max-h-96" />
+            <img src={bidmer} alt={c.co2Caption} className="w-full rounded-lg" />
             <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.co2Caption}</figcaption>
           </figure>
         </section>
@@ -96,7 +96,7 @@ export default function Forschung() {
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.nHeading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.n}</p>
           <figure>
-            <img src={steilhang} alt={c.nCaption} className="w-full rounded-lg object-cover max-h-96" />
+            <img src={steilhang} alt={c.nCaption} className="w-full rounded-lg" />
             <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.nCaption}</figcaption>
           </figure>
         </section>
@@ -105,13 +105,13 @@ export default function Forschung() {
         <section className="mb-xl border-t border-alpfor-rock/25 pt-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.popHeading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.pop}</p>
-          <div className="grid grid-cols-2 gap-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
             <figure>
-              <img src={camp} alt={c.popCaption1} className="w-full rounded-lg object-cover" style={{ height: '340px' }} />
+              <img src={camp} alt={c.popCaption1} className="w-full rounded-lg" />
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.popCaption1}</figcaption>
             </figure>
             <figure>
-              <img src={geum} alt={c.popCaption2} className="w-full rounded-lg object-cover" style={{ height: '340px' }} />
+              <img src={geum} alt={c.popCaption2} className="w-full rounded-lg" />
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.popCaption2}</figcaption>
             </figure>
           </div>
@@ -121,13 +121,13 @@ export default function Forschung() {
         <section className="mb-xl border-t border-alpfor-rock/25 pt-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.microHeading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.micro}</p>
-          <div className="grid grid-cols-2 gap-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
             <figure>
-              <img src={gletschernorm} alt={c.microCaption1} className="w-full rounded-lg object-cover" style={{ height: '280px' }} />
+              <img src={gletschernorm} alt={c.microCaption1} className="w-full rounded-lg aspect-[4/3] object-cover" />
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.microCaption1}</figcaption>
             </figure>
             <figure>
-              <img src={gletscherthermo} alt={c.microCaption2} className="w-full rounded-lg object-cover" style={{ height: '280px' }} />
+              <img src={gletscherthermo} alt={c.microCaption2} className="w-full rounded-lg aspect-[4/3] object-cover" />
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.microCaption2}</figcaption>
             </figure>
           </div>
@@ -138,7 +138,7 @@ export default function Forschung() {
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.monHeading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.mon}</p>
           <figure>
-            <img src={ltrMonitoring} alt={c.monHeading} className="w-full rounded-lg object-cover max-h-80" />
+            <img src={ltrMonitoring} alt={c.monHeading} className="w-full rounded-lg" />
           </figure>
         </section>
       </article>

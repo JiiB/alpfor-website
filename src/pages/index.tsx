@@ -119,9 +119,9 @@ export default function Index() {
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-xl">
             {t('sections.about.body2')}
           </p>
-          <div className="grid grid-cols-2 gap-md">
-            <img src={stationImg} alt="ALPFOR Station" className="w-full h-64 object-cover rounded-lg" />
-            <img src={gletscherImg} alt="Gletschervorfeld Furka" className="w-full h-64 object-cover rounded-lg" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
+            <img src={stationImg} alt="ALPFOR Station" className="w-full aspect-[3/2] object-cover rounded-lg" />
+            <img src={gletscherImg} alt="Gletschervorfeld Furka" className="w-full aspect-[3/2] object-cover rounded-lg" />
           </div>
         </section>
       </article>
