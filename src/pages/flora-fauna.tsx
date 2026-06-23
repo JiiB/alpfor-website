@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { useI18n } from '../i18n.tsx'
+import { Lightbox } from '../components/Lightbox.tsx'
 import { PageBanner } from '../components/PageBanner.tsx'
 import hotspotPdf from '../assets/pdf/alpfor furka hotspot WEB 2018.pdf?url'
 import titelblatt from '../assets/misc/Titelblatt_Hotspot_Furka.png'
@@ -84,6 +86,7 @@ const content = {
 export default function FloraFauna() {
   const { getLng } = useI18n()
   const c = content[getLng() as 'de' | 'en'] ?? content.de
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
   return (
     <>
@@ -129,11 +132,13 @@ export default function FloraFauna() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-md">
             {species.map(sp => (
               <figure key={sp.name}>
-                <img
-                  src={sp.src}
-                  alt={sp.name}
-                  className="object-cover aspect-[4/3] w-full rounded-lg"
-                />
+                <button type="button" onClick={() => setLightbox({ src: sp.src, alt: sp.name })} className="block w-full cursor-zoom-in">
+                  <img
+                    src={sp.src}
+                    alt={sp.name}
+                    className="object-cover aspect-[4/3] w-full rounded-lg"
+                  />
+                </button>
                 <figcaption className="mt-xs text-sm italic text-alpfor-rock">
                   <span className="font-medium">{sp.name}</span>
                   <span className="text-xs not-italic ml-xs text-alpfor-rock/70">{sp.family}</span>
@@ -143,6 +148,7 @@ export default function FloraFauna() {
           </div>
         </section>
       </article>
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </>
   )
 }

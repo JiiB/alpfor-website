@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { useI18n } from '../i18n.tsx'
+import { Lightbox } from '../components/Lightbox.tsx'
 import { PageBanner } from '../components/PageBanner.tsx'
 import pubListPdf from '../assets/pdf/Publikationsliste_ALPFOR_2023.pdf?url'
 import bidmer from '../assets/forschung/bidmer.jpg'
@@ -59,6 +61,7 @@ const content = {
 export default function Forschung() {
   const { getLng } = useI18n()
   const c = content[getLng() as 'de' | 'en'] ?? content.de
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
   return (
     <>
@@ -86,7 +89,9 @@ export default function Forschung() {
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.co2Heading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.co2}</p>
           <figure>
-            <img src={bidmer} alt={c.co2Caption} className="w-full rounded-lg" />
+            <button type="button" onClick={() => setLightbox({ src: bidmer, alt: c.co2Caption })} className="block w-full cursor-zoom-in">
+              <img src={bidmer} alt={c.co2Caption} className="w-full rounded-lg" />
+            </button>
             <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.co2Caption}</figcaption>
           </figure>
         </section>
@@ -96,7 +101,9 @@ export default function Forschung() {
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.nHeading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.n}</p>
           <figure>
-            <img src={steilhang} alt={c.nCaption} className="w-full rounded-lg" />
+            <button type="button" onClick={() => setLightbox({ src: steilhang, alt: c.nCaption })} className="block w-full cursor-zoom-in">
+              <img src={steilhang} alt={c.nCaption} className="w-full rounded-lg" />
+            </button>
             <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.nCaption}</figcaption>
           </figure>
         </section>
@@ -107,11 +114,15 @@ export default function Forschung() {
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.pop}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
             <figure>
-              <img src={camp} alt={c.popCaption1} className="w-full rounded-lg" />
+              <button type="button" onClick={() => setLightbox({ src: camp, alt: c.popCaption1 })} className="block w-full cursor-zoom-in">
+                <img src={camp} alt={c.popCaption1} className="w-full rounded-lg" />
+              </button>
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.popCaption1}</figcaption>
             </figure>
             <figure>
-              <img src={geum} alt={c.popCaption2} className="w-full rounded-lg" />
+              <button type="button" onClick={() => setLightbox({ src: geum, alt: c.popCaption2 })} className="block w-full cursor-zoom-in">
+                <img src={geum} alt={c.popCaption2} className="w-full rounded-lg" />
+              </button>
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.popCaption2}</figcaption>
             </figure>
           </div>
@@ -123,11 +134,15 @@ export default function Forschung() {
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.micro}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
             <figure>
-              <img src={gletschernorm} alt={c.microCaption1} className="w-full rounded-lg aspect-[4/3] object-cover" />
+              <button type="button" onClick={() => setLightbox({ src: gletschernorm, alt: c.microCaption1 })} className="block w-full cursor-zoom-in">
+                <img src={gletschernorm} alt={c.microCaption1} className="w-full rounded-lg aspect-[4/3] object-cover" />
+              </button>
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.microCaption1}</figcaption>
             </figure>
             <figure>
-              <img src={gletscherthermo} alt={c.microCaption2} className="w-full rounded-lg aspect-[4/3] object-cover" />
+              <button type="button" onClick={() => setLightbox({ src: gletscherthermo, alt: c.microCaption2 })} className="block w-full cursor-zoom-in">
+                <img src={gletscherthermo} alt={c.microCaption2} className="w-full rounded-lg aspect-[4/3] object-cover" />
+              </button>
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.microCaption2}</figcaption>
             </figure>
           </div>
@@ -138,10 +153,13 @@ export default function Forschung() {
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.monHeading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.mon}</p>
           <figure>
-            <img src={ltrMonitoring} alt={c.monHeading} className="w-full rounded-lg" />
+            <button type="button" onClick={() => setLightbox({ src: ltrMonitoring, alt: c.monHeading })} className="block w-full cursor-zoom-in">
+              <img src={ltrMonitoring} alt={c.monHeading} className="w-full rounded-lg" />
+            </button>
           </figure>
         </section>
       </article>
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </>
   )
 }

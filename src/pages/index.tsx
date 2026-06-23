@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Lightbox } from '../components/Lightbox.tsx'
 
 import gletscherImg from '../assets/misc/gletschervorfeld.jpg'
 import hotspotPdf from '../assets/pdf/alpfor furka hotspot WEB 2018.pdf?url'
@@ -32,6 +33,7 @@ const PdfIcon = ({ size = 22 }: { size?: number }) => (
 export default function Index() {
   const { t } = useTranslation()
   const [active, setActive] = useState(0)
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
   useEffect(() => {
     const id = setInterval(() => setActive(i => (i + 1) % slides.length), 5000)
@@ -120,11 +122,16 @@ export default function Index() {
             {t('sections.about.body2')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
-            <img src={stationImg} alt="ALPFOR Station" className="w-full aspect-[3/2] object-cover rounded-lg" />
-            <img src={gletscherImg} alt="Gletschervorfeld Furka" className="w-full aspect-[3/2] object-cover rounded-lg" />
+            <button type="button" onClick={() => setLightbox({ src: stationImg, alt: 'ALPFOR Station' })} className="block w-full cursor-zoom-in">
+              <img src={stationImg} alt="ALPFOR Station" className="w-full aspect-[3/2] object-cover rounded-lg" />
+            </button>
+            <button type="button" onClick={() => setLightbox({ src: gletscherImg, alt: 'Gletschervorfeld Furka' })} className="block w-full cursor-zoom-in">
+              <img src={gletscherImg} alt="Gletschervorfeld Furka" className="w-full aspect-[3/2] object-cover rounded-lg" />
+            </button>
           </div>
         </section>
       </article>
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </>
   )
 }

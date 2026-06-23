@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { PageBanner } from '../components/PageBanner.tsx'
+import { Lightbox } from '../components/Lightbox.tsx'
 import { useI18n } from '../i18n.tsx'
 import kurs1 from '../assets/misc/kurs1.jpg'
 import kurs2 from '../assets/misc/kurs2.jpg'
@@ -35,6 +37,7 @@ export default function Lehre() {
   const { t } = useTranslation()
   const { getLng } = useI18n()
   const c = content[getLng() as 'de' | 'en'] ?? content.de
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
   return (
     <>
@@ -72,10 +75,15 @@ export default function Lehre() {
         </ul>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
-          <img src={kurs1} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
-          <img src={kurs2} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+          <button type="button" onClick={() => setLightbox({ src: kurs1, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
+            <img src={kurs1} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+          </button>
+          <button type="button" onClick={() => setLightbox({ src: kurs2, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
+            <img src={kurs2} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+          </button>
         </div>
       </article>
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </>
   )
 }

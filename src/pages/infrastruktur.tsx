@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { PageBanner } from '../components/PageBanner.tsx'
+import { Lightbox } from '../components/Lightbox.tsx'
 import { useI18n } from '../i18n.tsx'
 import b1 from '../assets/buildings/1.jpg'
 import b2 from '../assets/buildings/2.jpg'
@@ -56,10 +58,12 @@ const content = {
   },
 } as const
 
-const photoStrip = (srcs: string[], alt: string) => (
+const photoStrip = (srcs: string[], alt: string, onImageClick: (src: string) => void) => (
   <div className="grid grid-cols-2 md:grid-cols-4 gap-xs my-md">
     {srcs.map((src, i) => (
-      <img key={i} src={src} alt={alt} className="object-contain h-48 w-full rounded" />
+      <button key={i} type="button" onClick={() => onImageClick(src)} className="block w-full cursor-zoom-in">
+        <img src={src} alt={alt} className="object-contain h-48 w-full rounded" />
+      </button>
     ))}
   </div>
 )
@@ -68,6 +72,8 @@ export default function Infrastruktur() {
   const { t } = useTranslation()
   const { getLng } = useI18n()
   const c = content[getLng() as 'de' | 'en'] ?? content.de
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
+  const openLightbox = (src: string, alt: string) => setLightbox({ src, alt })
 
   return (
     <>
@@ -78,7 +84,9 @@ export default function Infrastruktur() {
         {/* Top overview strip */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-md mb-lg">
           {[b1, b2, b3].map((src, i) => (
-            <img key={i} src={src} alt="ALPFOR Stationsgebäude" className="w-full h-auto rounded-lg" />
+            <button key={i} type="button" onClick={() => openLightbox(src, 'ALPFOR Stationsgebäude')} className="block w-full cursor-zoom-in">
+              <img src={src} alt="ALPFOR Stationsgebäude" className="w-full h-auto rounded-lg" />
+            </button>
           ))}
         </div>
 
@@ -88,21 +96,21 @@ export default function Infrastruktur() {
         <section className="mb-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.carexName}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">{c.carexDesc}</p>
-          {photoStrip([b8, b9, b10, b11], c.carexName)}
+          {photoStrip([b8, b9, b10, b11], c.carexName, src => openLightbox(src, c.carexName))}
         </section>
 
         {/* Haus Rumex */}
         <section className="mb-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.rumexName}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">{c.rumexDesc}</p>
-          {photoStrip([b12, b13, b14, b15], c.rumexName)}
+          {photoStrip([b12, b13, b14, b15], c.rumexName, src => openLightbox(src, c.rumexName))}
         </section>
 
         {/* Haus Ibex */}
         <section className="mb-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.ibexName}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-sm">{c.ibexDesc}</p>
-          {photoStrip([b4, b5, b6, b7], c.ibexName)}
+          {photoStrip([b4, b5, b6, b7], c.ibexName, src => openLightbox(src, c.ibexName))}
         </section>
 
         {/* Capacity, hours, costs */}
@@ -123,6 +131,7 @@ export default function Infrastruktur() {
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed">{c.costs}</p>
         </section>
       </article>
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
     </>
   )
 }
