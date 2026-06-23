@@ -10,11 +10,13 @@ export default function Karte() {
       <PageBanner title={t('pages.karte.title')} />
       <article className="mx-auto px-lg py-xxl" style={{ maxWidth: 'var(--container-standard)' }}>
         <figure>
-          <img
-            src={furkaMap}
-            alt="Karte ALPFOR Furkapass"
-            className="w-full rounded-lg shadow-md"
-          />
+          <a href="https://maps.app.goo.gl/aMen1Rcu3KkAZXnG7" target="_blank" rel="noopener noreferrer">
+            <img
+              src={furkaMap}
+              alt="Karte ALPFOR Furkapass"
+              className="w-full rounded-lg shadow-md"
+            />
+          </a>
           <figcaption className="mt-sm text-sm text-alpfor-rock italic text-center">
             {t('pages.karte.caption')}
           </figcaption>
