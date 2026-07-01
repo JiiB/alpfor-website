@@ -1,22 +1,12 @@
-import { useState } from 'react'
-import { useI18n } from '../i18n.tsx'
 import { Lightbox } from '../components/Lightbox.tsx'
 import { PageBanner } from '../components/PageBanner.tsx'
-import hotspotPdf from '../assets/pdf/alpfor furka hotspot WEB 2018.pdf?url'
-import titelblatt from '../assets/misc/Titelblatt_Hotspot_Furka.png'
 import f01 from '../assets/flora/01.jpg'
-import f02 from '../assets/flora/02.jpg'
 import f03 from '../assets/flora/03.jpg'
-import f04 from '../assets/flora/04.jpg'
 import f05 from '../assets/flora/05.jpg'
 import f06 from '../assets/flora/06.jpg'
 import f07 from '../assets/flora/07.jpg'
-import f08 from '../assets/flora/08.jpg'
 import f09 from '../assets/flora/09.jpg'
-import f10 from '../assets/flora/10.jpg'
 import f11 from '../assets/flora/11.jpg'
-import f12 from '../assets/flora/12.jpg'
-import f13 from '../assets/flora/13.jpg'
 import f14 from '../assets/flora/14.jpg'
 import f15 from '../assets/flora/15.jpg'
 import f16 from '../assets/flora/16.jpg'
@@ -25,24 +15,35 @@ import f18 from '../assets/flora/18.jpg'
 import f19 from '../assets/flora/19.jpg'
 import f20 from '../assets/flora/20.jpg'
 import f21 from '../assets/flora/21.jpg'
-import f22 from '../assets/flora/22.jpg'
 import f23 from '../assets/flora/23.jpg'
-import f24 from '../assets/flora/24.jpg'
+import loiseleariaImg from '../assets/flora/loiseleuria_procumbens.webp'
+import ranunculusAlpestrisImg from '../assets/flora/ranunculus_alpestris.webp'
+import dracocephalumImg from '../assets/flora/dracocephalum_ruyschiana.webp'
+import violaCalcarataImg from '../assets/flora/viola_calcarata.webp'
+import asterAlpinusImg from '../assets/flora/aster_alpinus.webp'
+import liliumImg from '../assets/flora/liliaceae.webp'
+import campanulaThyrsoidesImg from '../assets/flora/campanula_thyrsoides.webp'
+import nigritellaImg from '../assets/flora/nigritella_nigra.webp'
+import soldanellaImg from '../assets/flora/soldanella_pusilla.webp'
+import hotspotPdf from '../assets/pdf/alpfor furka hotspot WEB 2018.pdf?url'
+import titelblatt from '../assets/misc/Titelblatt_Hotspot_Furka.webp'
+import { useI18n } from '../i18n.tsx'
+import { useState } from 'react'
 
 const species = [
   { src: f01, name: 'Dryas octopetala', family: 'Rosaceae' },
-  { src: f02, name: 'Loiseleuria procumbens', family: 'Ericaceae' },
+  { src: loiseleariaImg, name: 'Loiseleuria procumbens', family: 'Ericaceae' },
   { src: f03, name: 'Silene exscapa', family: 'Caryophyllaceae' },
-  { src: f04, name: 'Ranunculus alpestris', family: 'Ranunculaceae' },
+  { src: ranunculusAlpestrisImg, name: 'Ranunculus alpestris', family: 'Ranunculaceae' },
   { src: f05, name: 'Ranunculus küpferi', family: 'Ranunculaceae' },
   { src: f06, name: 'Saxifraga seguieri', family: 'Saxifragaceae' },
   { src: f07, name: 'Gentiana verna', family: 'Gentianaceae' },
-  { src: f08, name: 'Dracocephalum ruyschiana', family: 'Lamiaceae' },
+  { src: dracocephalumImg, name: 'Dracocephalum ruyschiana', family: 'Lamiaceae' },
   { src: f09, name: 'Phyteuma hemisphaericum', family: 'Campanulaceae' },
-  { src: f10, name: 'Viola calcarata', family: 'Violaceae' },
+  { src: violaCalcarataImg, name: 'Viola calcarata', family: 'Violaceae' },
   { src: f11, name: 'Gentiana purpurea', family: 'Gentianaceae' },
-  { src: f12, name: 'Aster alpinus', family: 'Asteraceae' },
-  { src: f13, name: 'Lilium martagon', family: 'Liliaceae' },
+  { src: asterAlpinusImg, name: 'Aster alpinus', family: 'Asteraceae' },
+  { src: liliumImg, name: 'Lilium martagon', family: 'Liliaceae' },
   { src: f14, name: 'Trifolium alpinum', family: 'Fabaceae' },
   { src: f15, name: 'Pedicularis verticillata', family: 'Scrophulariaceae' },
   { src: f16, name: 'Carex curvula', family: 'Cyperaceae' },
@@ -51,9 +52,10 @@ const species = [
   { src: f19, name: 'Adenostyles alliariae', family: 'Asteraceae' },
   { src: f20, name: 'Polygonum viviparum', family: 'Polygonaceae' },
   { src: f21, name: 'Alnus viridis', family: 'Betulaceae' },
-  { src: f22, name: 'Campanula thyrsoides', family: 'Campanulaceae' },
+  { src: campanulaThyrsoidesImg, name: 'Campanula thyrsoides', family: 'Campanulaceae' },
   { src: f23, name: 'Gentiana punctata', family: 'Gentianaceae' },
-  { src: f24, name: 'Nigritella nigra', family: 'Orchidaceae' },
+  { src: nigritellaImg, name: 'Nigritella nigra', family: 'Orchidaceae' },
+  { src: soldanellaImg, name: 'Soldanella pusilla', family: 'Primulaceae' },
 ]
 
 const content = {

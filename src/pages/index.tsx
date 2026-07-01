@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Lightbox } from '../components/Lightbox.tsx'
 
-import gletscherImg from '../assets/misc/gletschervorfeld.jpg'
+import { Lightbox } from '../components/Lightbox.tsx'
+import gletscherImg from '../assets/misc/gletscher.webp'
 import hotspotPdf from '../assets/pdf/alpfor furka hotspot WEB 2018.pdf?url'
 import img1 from '../assets/background/furka-summer.jpg'
 import img2 from '../assets/background/IMG_3036.jpeg'

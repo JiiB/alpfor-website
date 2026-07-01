@@ -1,6 +1,6 @@
-import { useTranslation } from 'react-i18next'
 import { PageBanner } from '../components/PageBanner.tsx'
-import furkaMap from '../assets/misc/furka_map.png'
+import furkaMap from '../assets/misc/furka_map.webp'
+import { useTranslation } from 'react-i18next'
 
 export default function Karte() {
   const { t } = useTranslation()
