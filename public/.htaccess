@@ -1,0 +1,11 @@
+# Redirect old indexed URLs to new equivalents
+Redirect 301 /static/template.html /de/
+Redirect 301 /wetter.shtml /de/webcam
+
+# SSG routing: serve the .html file when a bare path is requested (e.g. /de/forschung → /de/forschung.html)
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
