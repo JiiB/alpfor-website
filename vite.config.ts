@@ -17,4 +17,7 @@ export default defineConfig({
     },
   ] as PluginOption[],
   base: '/',
+  ssgOptions: {
+    dirStyle: 'nested',
+  },
 })
