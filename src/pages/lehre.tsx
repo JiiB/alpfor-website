@@ -1,12 +1,16 @@
-import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { PageBanner } from '../components/PageBanner.tsx'
 import { Lightbox } from '../components/Lightbox.tsx'
-import { useI18n } from '../i18n.tsx'
-import kurs1 from '../assets/misc/kurs1.jpg'
-import kurs2 from '../assets/misc/kurs2.jpg'
+import { PageBanner } from '../components/PageBanner.tsx'
+import kurs1 from '../assets/forschung/summer_school_excursion_erika.webp'
+import kurs2 from '../assets/forschung/summer_school_excursion.webp'
+import kurs3 from '../assets/forschung/summer_school_excursion_group.webp'
+import kurs4 from '../assets/forschung/summer_school_excursion_snow.webp'
+import kurs5 from '../assets/forschung/summer_school_lecture.webp'
+import kurs6 from '../assets/forschung/summer_school_excercise.webp'
 import leistungsnachweisPdf from '../assets/pdf/ALPFOR_Leistungsnachweis_2023.pdf?url'
 import summerSchoolPdf from '../assets/pdf/Flyer_SummerSchool2026.pdf?url'
+import { useI18n } from '../i18n.tsx'
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const PdfIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="currentColor" viewBox="0 0 256 256" className="shrink-0">
@@ -74,12 +78,24 @@ export default function Lehre() {
           </li>
         </ul>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-md">
           <button type="button" onClick={() => setLightbox({ src: kurs1, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
             <img src={kurs1} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
           </button>
           <button type="button" onClick={() => setLightbox({ src: kurs2, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
             <img src={kurs2} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+          </button>
+          <button type="button" onClick={() => setLightbox({ src: kurs3, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
+            <img src={kurs3} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+          </button>
+          <button type="button" onClick={() => setLightbox({ src: kurs4, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
+            <img src={kurs4} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+          </button>
+          <button type="button" onClick={() => setLightbox({ src: kurs5, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
+            <img src={kurs5} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+          </button>
+          <button type="button" onClick={() => setLightbox({ src: kurs6, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
+            <img src={kurs6} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
           </button>
         </div>
       </article>

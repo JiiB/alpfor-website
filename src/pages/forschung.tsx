@@ -88,7 +88,7 @@ export default function Forschung() {
         <section className="mb-xl border-t border-alpfor-rock/25 pt-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.co2Heading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.co2}</p>
-          <figure>
+          <figure className="max-w-2xl mx-auto">
             <button type="button" onClick={() => setLightbox({ src: bidmer, alt: c.co2Caption })} className="block w-full cursor-zoom-in">
               <img src={bidmer} alt={c.co2Caption} className="w-full rounded-lg" />
             </button>
@@ -100,7 +100,7 @@ export default function Forschung() {
         <section className="mb-xl border-t border-alpfor-rock/25 pt-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.nHeading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.n}</p>
-          <figure>
+          <figure className="max-w-2xl mx-auto">
             <button type="button" onClick={() => setLightbox({ src: steilhang, alt: c.nCaption })} className="block w-full cursor-zoom-in">
               <img src={steilhang} alt={c.nCaption} className="w-full rounded-lg" />
             </button>
@@ -112,7 +112,7 @@ export default function Forschung() {
         <section className="mb-xl border-t border-alpfor-rock/25 pt-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.popHeading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.pop}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-md max-w-2xl mx-auto">
             <figure>
               <button type="button" onClick={() => setLightbox({ src: camp, alt: c.popCaption1 })} className="block w-full cursor-zoom-in">
                 <img src={camp} alt={c.popCaption1} className="w-full rounded-lg" />
@@ -152,7 +152,7 @@ export default function Forschung() {
         <section className="border-t border-alpfor-rock/25 pt-xl">
           <h2 className="font-heading text-2xl font-semibold text-alpfor-blue mb-sm">{c.monHeading}</h2>
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.mon}</p>
-          <figure>
+          <figure className="max-w-2xl mx-auto">
             <button type="button" onClick={() => setLightbox({ src: ltrMonitoring, alt: c.monHeading })} className="block w-full cursor-zoom-in">
               <img src={ltrMonitoring} alt={c.monHeading} className="w-full rounded-lg" />
             </button>
