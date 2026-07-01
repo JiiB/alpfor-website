@@ -39,13 +39,13 @@ const navItems: NavItem[] = [
   { labelKey: 'nav.contact', to: '/kontakt' },
 ]
 
-const Chevron = ({ open }: { open: boolean }) => (
+const Chevron = ({ open, className = '' }: { open: boolean; className?: string }) => (
   <svg
     width="10"
     height="6"
     viewBox="0 0 10 6"
     fill="none"
-    className={`inline-block ml-1 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+    className={`inline-block ml-1 transition-transform duration-200 ${open ? 'rotate-180' : ''} ${className}`}
   >
     <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
@@ -83,10 +83,10 @@ export const Nav = ({ onMobileOpenChange }: { onMobileOpenChange?: (open: boolea
                 key={item.labelKey}
                 to={withLngBase(item.to)}
                 className={[
-                  'font-sans text-base transition-colors px-xs py-1 whitespace-nowrap border-b-2',
+                  'font-sans text-base transition-colors px-xs py-1 whitespace-nowrap border-b-2 [text-shadow:0_0_2px_black]',
                   isActive(item.to)
                     ? 'text-white border-white'
-                    : 'text-white/80 hover:text-white border-transparent',
+                    : 'text-white border-transparent',
                 ].join(' ')}
               >
                 {t(item.labelKey)}
@@ -105,14 +105,14 @@ export const Nav = ({ onMobileOpenChange }: { onMobileOpenChange?: (open: boolea
               <button
                 type="button"
                 className={[
-                  'flex items-center font-sans text-base transition-colors px-xs py-1 whitespace-nowrap cursor-pointer bg-transparent border-x-0 border-t-0 border-b-2',
+                  'flex items-center font-sans text-base transition-colors px-xs py-1 whitespace-nowrap cursor-pointer bg-transparent border-x-0 border-t-0 border-b-2 [text-shadow:0_0_2px_black]',
                   isGroupActive(item)
                     ? 'text-white border-white'
-                    : 'text-white/80 hover:text-white border-transparent',
+                    : 'text-white border-transparent',
                 ].join(' ')}
               >
                 {t(item.labelKey)}
-                <Chevron open={open} />
+                <Chevron open={open} className="[filter:drop-shadow(0_0_2px_black)]" />
               </button>
 
               {open && (
