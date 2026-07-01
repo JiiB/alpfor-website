@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite-react-ssg dev",
-    "build": "vite-react-ssg build",
+    "build": "vite-react-ssg build && node scripts/gen-redirects.js",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
