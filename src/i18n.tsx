@@ -242,10 +242,7 @@ export function useI18n() {
     if (!path.startsWith('/')) {
       path = `/${path}`
     }
-    if (path === '/') {
-      path = ''
-    }
-    return `/${getLng()}${path}`
+    return `/${getLng()}${path === '/' ? '' : path}/`
   }
 
   const getLng = () => pathname.split('/')[1]
