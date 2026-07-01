@@ -62,7 +62,7 @@ const photoStrip = (srcs: string[], alt: string, onImageClick: (src: string) => 
   <div className="grid grid-cols-2 md:grid-cols-4 gap-xs my-md">
     {srcs.map((src, i) => (
       <button key={i} type="button" onClick={() => onImageClick(src)} className="block w-full cursor-zoom-in">
-        <img src={src} alt={alt} className="object-contain h-48 w-full rounded" />
+        <img src={src} alt={alt} className="object-contain h-48 w-full rounded" loading="lazy" />
       </button>
     ))}
   </div>
@@ -85,7 +85,7 @@ export default function Infrastruktur() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-md mb-lg">
           {[b1, b2, b3].map((src, i) => (
             <button key={i} type="button" onClick={() => openLightbox(src, 'ALPFOR Stationsgebäude')} className="block w-full cursor-zoom-in">
-              <img src={src} alt="ALPFOR Stationsgebäude" className="w-full h-auto rounded-lg" />
+              <img src={src} alt="ALPFOR Stationsgebäude" className="w-full h-auto rounded-lg" loading="lazy" />
             </button>
           ))}
         </div>

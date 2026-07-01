@@ -105,7 +105,7 @@ export default function FloraFauna() {
             <img
               src={titelblatt}
               alt={c.hotspotBookTitle}
-              className="h-32 w-auto shrink-0 rounded shadow-sm"
+              className="h-32 w-auto shrink-0 rounded shadow-sm" loading="lazy"
             />
             <div>
               <p className="font-sans text-sm font-semibold text-alpfor-blue mb-xs">{c.hotspotBookTitle}</p>
@@ -138,7 +138,7 @@ export default function FloraFauna() {
                   <img
                     src={sp.src}
                     alt={sp.name}
-                    className="object-cover aspect-[4/3] w-full rounded-lg"
+                    className="object-cover aspect-[4/3] w-full rounded-lg" loading="lazy"
                   />
                 </button>
                 <figcaption className="mt-xs text-sm italic text-alpfor-rock">

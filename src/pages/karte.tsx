@@ -15,6 +15,7 @@ export default function Karte() {
               src={furkaMap}
               alt="Karte ALPFOR Furkapass"
               className="w-full rounded-lg shadow-md"
+            loading="lazy"
             />
           </a>
           <figcaption className="mt-sm text-sm text-alpfor-rock italic text-center">

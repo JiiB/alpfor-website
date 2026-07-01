@@ -90,7 +90,7 @@ export default function Forschung() {
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.co2}</p>
           <figure className="max-w-2xl mx-auto">
             <button type="button" onClick={() => setLightbox({ src: bidmer, alt: c.co2Caption })} className="block w-full cursor-zoom-in">
-              <img src={bidmer} alt={c.co2Caption} className="w-full rounded-lg" />
+              <img src={bidmer} alt={c.co2Caption} className="w-full rounded-lg" loading="lazy" />
             </button>
             <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.co2Caption}</figcaption>
           </figure>
@@ -102,7 +102,7 @@ export default function Forschung() {
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.n}</p>
           <figure className="max-w-2xl mx-auto">
             <button type="button" onClick={() => setLightbox({ src: steilhang, alt: c.nCaption })} className="block w-full cursor-zoom-in">
-              <img src={steilhang} alt={c.nCaption} className="w-full rounded-lg" />
+              <img src={steilhang} alt={c.nCaption} className="w-full rounded-lg" loading="lazy" />
             </button>
             <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.nCaption}</figcaption>
           </figure>
@@ -115,13 +115,13 @@ export default function Forschung() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-md max-w-2xl mx-auto">
             <figure>
               <button type="button" onClick={() => setLightbox({ src: camp, alt: c.popCaption1 })} className="block w-full cursor-zoom-in">
-                <img src={camp} alt={c.popCaption1} className="w-full rounded-lg" />
+                <img src={camp} alt={c.popCaption1} className="w-full rounded-lg" loading="lazy" />
               </button>
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.popCaption1}</figcaption>
             </figure>
             <figure>
               <button type="button" onClick={() => setLightbox({ src: geum, alt: c.popCaption2 })} className="block w-full cursor-zoom-in">
-                <img src={geum} alt={c.popCaption2} className="w-full rounded-lg" />
+                <img src={geum} alt={c.popCaption2} className="w-full rounded-lg" loading="lazy" />
               </button>
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.popCaption2}</figcaption>
             </figure>
@@ -135,13 +135,13 @@ export default function Forschung() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
             <figure>
               <button type="button" onClick={() => setLightbox({ src: gletschernorm, alt: c.microCaption1 })} className="block w-full cursor-zoom-in">
-                <img src={gletschernorm} alt={c.microCaption1} className="w-full rounded-lg aspect-[4/3] object-cover" />
+                <img src={gletschernorm} alt={c.microCaption1} className="w-full rounded-lg aspect-[4/3] object-cover" loading="lazy" />
               </button>
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.microCaption1}</figcaption>
             </figure>
             <figure>
               <button type="button" onClick={() => setLightbox({ src: gletscherthermo, alt: c.microCaption2 })} className="block w-full cursor-zoom-in">
-                <img src={gletscherthermo} alt={c.microCaption2} className="w-full rounded-lg aspect-[4/3] object-cover" />
+                <img src={gletscherthermo} alt={c.microCaption2} className="w-full rounded-lg aspect-[4/3] object-cover" loading="lazy" />
               </button>
               <figcaption className="mt-xs text-sm text-alpfor-rock italic text-center">{c.microCaption2}</figcaption>
             </figure>
@@ -154,7 +154,7 @@ export default function Forschung() {
           <p className="font-sans text-lg text-alpfor-forest leading-relaxed mb-md">{c.mon}</p>
           <figure className="max-w-2xl mx-auto">
             <button type="button" onClick={() => setLightbox({ src: ltrMonitoring, alt: c.monHeading })} className="block w-full cursor-zoom-in">
-              <img src={ltrMonitoring} alt={c.monHeading} className="w-full rounded-lg" />
+              <img src={ltrMonitoring} alt={c.monHeading} className="w-full rounded-lg" loading="lazy" />
             </button>
           </figure>
         </section>

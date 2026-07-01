@@ -123,10 +123,10 @@ export default function Index() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
             <button type="button" onClick={() => setLightbox({ src: stationImg, alt: 'ALPFOR Station' })} className="block w-full cursor-zoom-in">
-              <img src={stationImg} alt="ALPFOR Station" className="w-full aspect-[3/2] object-cover rounded-lg" />
+              <img src={stationImg} alt="ALPFOR Station" className="w-full aspect-[3/2] object-cover rounded-lg" loading="lazy" />
             </button>
             <button type="button" onClick={() => setLightbox({ src: gletscherImg, alt: 'Gletschervorfeld Furka' })} className="block w-full cursor-zoom-in">
-              <img src={gletscherImg} alt="Gletschervorfeld Furka" className="w-full aspect-[3/2] object-cover rounded-lg" />
+              <img src={gletscherImg} alt="Gletschervorfeld Furka" className="w-full aspect-[3/2] object-cover rounded-lg" loading="lazy" />
             </button>
           </div>
         </section>

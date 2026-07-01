@@ -80,22 +80,22 @@ export default function Lehre() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-md">
           <button type="button" onClick={() => setLightbox({ src: kurs1, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
-            <img src={kurs1} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+            <img src={kurs1} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" loading="lazy" />
           </button>
           <button type="button" onClick={() => setLightbox({ src: kurs2, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
-            <img src={kurs2} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+            <img src={kurs2} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" loading="lazy" />
           </button>
           <button type="button" onClick={() => setLightbox({ src: kurs3, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
-            <img src={kurs3} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+            <img src={kurs3} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" loading="lazy" />
           </button>
           <button type="button" onClick={() => setLightbox({ src: kurs4, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
-            <img src={kurs4} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+            <img src={kurs4} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" loading="lazy" />
           </button>
           <button type="button" onClick={() => setLightbox({ src: kurs5, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
-            <img src={kurs5} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+            <img src={kurs5} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" loading="lazy" />
           </button>
           <button type="button" onClick={() => setLightbox({ src: kurs6, alt: 'ALPFOR Sommerkurs' })} className="block w-full cursor-zoom-in">
-            <img src={kurs6} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" />
+            <img src={kurs6} alt="ALPFOR Sommerkurs" className="w-full rounded-lg object-cover aspect-[4/3]" loading="lazy" />
           </button>
         </div>
       </article>

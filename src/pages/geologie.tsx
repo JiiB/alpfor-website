@@ -25,7 +25,7 @@ export default function Geologie() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-md">
           {images.map((src, i) => (
             <button key={i} type="button" onClick={() => setLightbox({ src, alt: t('sections.geology.title') })} className="block w-full cursor-zoom-in">
-              <img src={src} alt={t('sections.geology.title')} className="w-full rounded-lg object-cover aspect-[4/3]" />
+              <img src={src} alt={t('sections.geology.title')} className="w-full rounded-lg object-cover aspect-[4/3]" loading="lazy" />
             </button>
           ))}
         </div>
