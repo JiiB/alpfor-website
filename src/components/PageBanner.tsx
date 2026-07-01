@@ -1,4 +1,4 @@
-import heroImage from '../assets/background/furka-summer.jpg'
+import heroImage from '../assets/misc/mountain_banner.webp'
 
 type Props = { title: string }
 
@@ -7,7 +7,7 @@ export const PageBanner = ({ title }: Props) => (
     <img
       src={heroImage}
       alt=""
-      className="w-full h-full object-cover object-top"
+      className="w-full h-full object-cover object-center"
     />
     <div
       className="absolute inset-0"
