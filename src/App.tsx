@@ -2,7 +2,14 @@ import Layout from './Layout.tsx'
 import type { RouteRecord } from 'vite-react-ssg'
 import { resources } from './i18n.tsx'
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+
+const CatchAllRedirect = () => {
+  const { lng } = useParams()
+  const navigate = useNavigate()
+  useEffect(() => { navigate(`/${lng}/`, { replace: true }) }, [navigate, lng])
+  return null
+}
 
 export const routes: RouteRecord[] = [
   {
@@ -22,6 +29,7 @@ export const routes: RouteRecord[] = [
       { path: 'kontakt', lazy: () => defaultToComponent(import('./pages/kontakt.tsx')) },
       { path: 'links', lazy: () => defaultToComponent(import('./pages/links.tsx')) },
       { path: 'impressum', lazy: () => defaultToComponent(import('./pages/impressum.tsx')) },
+      { path: '*', Component: CatchAllRedirect },
     ],
   },
   {

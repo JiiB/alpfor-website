@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react'
 
 import { Lightbox } from '../components/Lightbox.tsx'
 import gletscherImg from '../assets/misc/gletschervorfeld.webp'
-import hotspotPdf from '../assets/pdf/alpfor furka hotspot WEB 2018.pdf?url'
+const hotspotPdf = '/media/hotspot/alpfor furka hotspot WEB 2018.pdf'
 import img1 from '../assets/background/furka-summer.webp'
 import img2 from '../assets/background/IMG_3036.webp'
 import img3 from '../assets/background/IMG_3046.webp'
 import stationImg from '../assets/misc/alpfor_station.webp'
-import summerSchoolPdf from '../assets/pdf/Flyer_SummerSchool2026.pdf?url'
+const summerSchoolPdf = '/media/hotspot/Flyer_SummerSchool2026.pdf'
 import { useTranslation } from 'react-i18next'
 
 const slides = [img1, img2, img3]
