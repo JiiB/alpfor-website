@@ -33,6 +33,24 @@ public/
   favicon.svg
 ```
 
+## Deploy
+
+The site deploys via FTP using [`lftp`](https://lftp.yar.ru). One command builds and uploads:
+
+```bash
+bash deploy.sh
+```
+
+First-time setup:
+
+```bash
+brew install lftp          # macOS — install lftp if not already present
+cp .env.deploy.example .env.deploy
+# fill in FTP_HOST, FTP_USER, FTP_PASS, FTP_REMOTE_DIR
+```
+
+`deploy.sh` runs `bun run build` then mirrors `dist/` to the FTP server, deleting any remote files that no longer exist locally. Credentials live in `.env.deploy` (gitignored).
+
 ## Content
 
 Pages with long bilingual text and images (forschung, infrastruktur, flora-fauna, lehre) use a per-page `content = { de: {…}, en: {…} }` object rather than i18n strings. Simpler pages (verein, geologie, kontakt, impressum) pull text from `i18n.tsx`.
